@@ -10,7 +10,7 @@ El Verifier de EUDIStack permite a tu organización **verificar credenciales** p
 
 -   :material-cellphone-link: [**Verificación presencial**](proximity-verification.md)
 
-    El verifier se conecta con el wallet del usuario por proximidad (BLE/QR), por ejemplo en un control de acceso físico.
+    El verifier se conecta con el wallet del usuario por proximidad (QR), por ejemplo en un control de acceso físico.
 
 </div>
 

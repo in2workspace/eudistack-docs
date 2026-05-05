@@ -20,6 +20,8 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si tu ca
 
 ### La credencial aparece como revocada
 
+![](../assets/img/users/troubleshooting/revoke.png){ width="240" }
+
 - **Síntoma**: al presentarla a un Verifier, te informa de que la credencial está revocada.
 - **Causa probable**: el emisor revocó la credencial (cambio de rol, baja en la organización).
 - **Solución**: contacta con el emisor; necesitarás una nueva credencial.
@@ -35,7 +37,7 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si tu ca
 ### El destinatario no recibe la oferta
 
 - **Síntoma**: emites la credencial pero el destinatario nunca la recibe.
-- **Causa probable**: email/SMS bloqueado o dirección incorrecta.
+- **Causa probable**: email bloqueado o dirección incorrecta.
 - **Solución**: revisa en la pestaña *Credenciales* el estado y reenvía la oferta; verifica el contacto del destinatario.
 
 ## Verifier
