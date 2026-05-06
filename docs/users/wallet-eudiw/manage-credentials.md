@@ -30,7 +30,7 @@ Lista todas las credenciales activas con:
 Accede a través de **Ajustes → Actividad**. Lista cada presentación enviada y cada credencial recibida, con timestamp y verifier/issuer asociado.
 
 <figure markdown style="display: table; margin-left: 0;">
-![Campo Actividad en Ajustes](../../assets/img/users/wallet-eudiw/type-activity.png){ width="320" }
+![Campo Actividad en Ajustes](../../assets/img/users/wallet-eudiw/activity.png){ width="320" }
 </figure>
 
 <figure markdown style="display: table; margin-left: 0;">
