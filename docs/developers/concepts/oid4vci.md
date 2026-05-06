@@ -28,7 +28,7 @@ sequenceDiagram
     Note over W, I: Pre-Authorized Code Flow
     W->>I: Resuelve Oferta (Credential Offer)
     Note right of I: Envía tx_code al email del titular
-    W->>I: Solicita Token (pre_authorized_code + tx_code)
+    W->>I: Solicita Token (pre-authorized_code + tx_code)
     I-->>W: Devuelve access_token
     W->>I: Solicita Nonce
     I-->>W: Devuelve c_nonce
