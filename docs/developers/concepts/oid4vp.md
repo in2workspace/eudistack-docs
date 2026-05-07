@@ -2,7 +2,7 @@
 
 OID4VP es el protocolo estándar que define cómo un Verificador solicita y recibe presentaciones de credenciales verificables desde un wallet. La implementación de EUDIStack actúa como el componente verificador, permitiendo a aplicaciones de terceros consumir datos de identidad de forma segura y estandarizada.
 
-Los formatos de credencial soportados para la verificación incluyen **jwt_vc_json** (W3C) y **dc+sd-jwt** (SD-JWT VC).
+Los formatos de credencial soportados para la verificación incluyen **jwt_vc_json** y **SD-JWT VC**.
 
 ---
 
