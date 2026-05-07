@@ -29,7 +29,7 @@ sequenceDiagram
     Note over W, C: Inicio de Presentación
     C->>V: Crea solicitud de presentación
     V-->>C: Retorna ID de sesión + QR/URI
-    C->>W: Muestra QR o Deep Link⠀⠀⠀⠀⠀⠀⠀⠀
+    C->>W: Muestra QR o Deep Link
     W->>V: Recupera detalles de la solicitud
     V-->>W: Retorna Presentation Definition
     Note over W: El titular selecciona los claims
