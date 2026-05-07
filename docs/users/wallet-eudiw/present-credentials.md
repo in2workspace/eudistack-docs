@@ -8,9 +8,17 @@ Las credenciales en formato SD-JWT permiten **revelar solo los atributos necesar
 
 ## Pasos
 
-1. **El Verifier presenta una solicitud**: QR o redirección.
+1. **El Verifier presenta una solicitud**: QR o URL.
 
-2. **El wallet muestra la credencial que coincide con la solicitud**.
+    Para escanear el QR desde el wallet: pulsar la pestaña *Escaneo QR* en la barra de navegación inferior.
+
+    ![Barra de navegación inferior del wallet](../../assets/img/users/wallet-eudiw/nav-bottom.png){ width="240" }
+
+    Apuntar la cámara al código QR. También es posible pegar la URL manualmente en el campo de texto.
+
+    ![Pantalla de escaneo de QR en el wallet](../../assets/img/users/wallet-eudiw/wallet-scan.png){ width="240" }
+
+2. **El Wallet muestra las credenciales que coincide con la solicitud**.
 
     ![Pantalla Solicitud de Credencial](../../assets/img/users/wallet-eudiw/vc-select.png){ width="240" }
 
@@ -22,6 +30,6 @@ Las credenciales en formato SD-JWT permiten **revelar solo los atributos necesar
 
 ## Privacidad
 
-- Solo se envía lo que se confirma
+- Solo se envía lo que se confirma.
 - El wallet registra cada presentación en *Actividad*, accesible desde **Ajustes → Actividad**.
-- Es posible denegar la presentación sin penalización.
+- Es posible denegar la presentación sin penalización. Si se desea reintentar, escanear de nuevo el QR o enlace del Verifier; en algunos casos puede ser necesario solicitar uno nuevo.
