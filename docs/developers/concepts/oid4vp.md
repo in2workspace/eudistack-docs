@@ -47,7 +47,7 @@ sequenceDiagram
 
 ---
 
-## Anatomía de una Solicitud 
+## Anatomía de una Solicitud
 
 El objeto central de OID4VP es la solicitud de presentación. A continuación se muestra un ejemplo de un objeto JSON que el wallet resuelve al iniciar el flujo para una credencial de empleado:
 ```json
