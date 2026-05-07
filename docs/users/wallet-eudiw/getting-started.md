@@ -1,8 +1,6 @@
 # Primeros pasos — EUDIW
 
-<!-- TODO: contenido pendiente -->
-
-Esta guía te llevará paso a paso por la primera configuración del Wallet EUDIW: instalación como PWA <small>*(Progressive Web App — instalable desde el navegador)*</small>, alta de passkey, ajustes recomendados y verificación de que el wallet está operativo.
+Primera configuración del Wallet EUDIW: instalación como PWA, registro del passkey y verificación de acceso.
 
 ## Requisitos
 
@@ -12,14 +10,23 @@ Esta guía te llevará paso a paso por la primera configuración del Wallet EUDI
 
 ## Pasos
 
-1. **Abrir el wallet**: navega a la URL del wallet de tu organización.
-2. **Crear passkey**: el wallet pedirá registrar un passkey con tu biometría o PIN.
-    ![ Pantalla Crear passkey — Crear Wallet](../../assets/img/users/wallet-eudiw/create-passkey.png){ width="320" }
-3. **Confirmar configuración**: revisa idioma, modo claro/oscuro y desenfoque privacidad.
-    ![Ajustes de idioma y privacidad](../../assets/img/users/wallet-eudiw/confirm-config.png){ width="320" }
+1. **Abrir el wallet**: navegar a la URL del wallet de la organización.
 
-<!-- TODO: insertar capturas paso a paso -->
+2. **Instalar como PWA** *(opcional)*: si el navegador lo permite, el wallet ofrece instalar la aplicación en el dispositivo. La instalación permite acceder al wallet como una app nativa, sin necesidad de abrir el navegador cada vez. Es posible continuar sin instalar.
+
+    ![Pantalla de instalación del wallet como PWA](../../assets/img/users/wallet-eudiw/pwa.png){ width="80" }
+
+3. **Crear el passkey**: el wallet solicita registrar un passkey con la biometría o PIN del dispositivo.
+
+    ![Pantalla Crear passkey — Crear Wallet](../../assets/img/users/wallet-eudiw/create-passkey.png){ width="320" }
+
+4. **Acceso confirmado**: ya es posible recibir y presentar credenciales desde el wallet.
+
+!!! note "Ajustes opcionales"
+    Desde **Ajustes** es posible configurar el idioma, el modo oscuro y el desenfoque de privacidad en cualquier momento, sin necesidad de repetir el alta.
+
+    ![Ajustes de idioma y privacidad](../../assets/img/users/wallet-eudiw/confirm-config.png){ width="320" }
 
 ## Siguiente paso
 
-[Recibir tu primera credencial →](receive-credentials.md)
+[Recibir la primera credencial →](receive-credentials.md)

@@ -1,36 +1,34 @@
 # Emitir una credencial
 
-<!-- TODO: contenido pendiente -->
-
 Pasos para emitir una credencial desde el portal.
 
-## Flujo general
+## Pasos
 
-1. **Inicia sesión** en el Portal Issuer con tu credencial organizativa.
+1. **Iniciar sesión** en el Portal Issuer con la credencial organizativa.
 
-    El portal mostrará un código QR en pantalla.
+    El portal mostrará un código QR en pantalla o facilita un enlace para pegarlo directamente en el wallet.
 
     ![Pantalla de inicio de sesión del portal con código QR](../../assets/img/users/issuer-portal/verifier-login.png){ width="560" }
 
-    Abre tu wallet, escanea el QR o copia y pega el contenido manualmente.
+    Abrir el wallet, escanear el QR o copiar y pegar el contenido manualmente.
 
     ![Pantalla de escaneo de QR en el wallet](../../assets/img/users/issuer-portal/wallet-scan.png){ width="240" }
 
-    Selecciona tu credencial organizativa y confirma.
+    Seleccionar la credencial organizativa y confirmar.
 
     ![Selección de credencial organizativa en el wallet](../../assets/img/users/issuer-portal/valid-credential.png){ width="320" }
 
-    El portal te dará acceso automáticamente.
+    El portal dará acceso automáticamente.
 
-2. **Selecciona el tipo de credencial** que quieres emitir (depende del catálogo configurado para tu organización).
+2. **Seleccionar el tipo de credencial** a emitir (depende del catálogo configurado para la organización).
 
-    ![Selección del método de entrega](../../assets/img/users/issuer-portal/create-credential.png){ width="240" }
+    ![Selección del tipo de credencial](../../assets/img/users/issuer-portal/create-credential.png){ width="240" }
 
-3. **Rellena los atributos** del destinatario (nombre, email, atributos específicos del tipo). Elige también el método de entrega: *por email* o *mediante QR* para escaneo presencial.
+3. **Rellenar los atributos** del destinatario (nombre, email, atributos específicos del tipo). Seleccionar también el método de entrega: *por email* o *en pantalla* (QR para escaneo inmediato).
 
-    ![Selección del tipo de credencial](../../assets/img/users/issuer-portal/type-deliver.png){ width="240" }
+    ![Selección del método de entrega](../../assets/img/users/issuer-portal/type-deliver.png){ width="240" }
 
-4. **Confirma**: el portal genera una oferta y la entrega según el método seleccionado.
+4. **Confirmar**: el portal genera una oferta y la entrega según el método seleccionado.
 
 5. **El destinatario acepta la oferta** desde su wallet — momento en el que la credencial queda emitida.
 
@@ -40,7 +38,4 @@ Pasos para emitir una credencial desde el portal.
 - **VÁLIDO**: el destinatario ha aceptado la credencial y está en su wallet en periodo de validez.
 - **EXPIRADO**: la credencial ha superado su fecha de validez.
 - **RETIRADO**: el emisor ha cancelado la oferta antes de que el destinatario la aceptara.
-- **REVOCADO**: el emisor ha revocado la credencial explícitamente; deja de ser válida aunque no haya alcanzado su
-  fecha de caducidad.
-
-<!-- TODO: capturas del wizard de emisión -->
+- **REVOCADO**: el emisor ha revocado la credencial explícitamente; deja de ser válida aunque no haya alcanzado su fecha de caducidad.
