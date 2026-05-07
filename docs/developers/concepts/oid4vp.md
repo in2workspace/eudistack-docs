@@ -2,7 +2,7 @@
 
 OID4VP es el protocolo estándar que define cómo un Verificador solicita y recibe presentaciones de credenciales verificables desde un wallet. La implementación de EUDIStack actúa como el componente verificador, permitiendo a aplicaciones de terceros consumir datos de identidad de forma segura y estandarizada.
 
-Los formatos de credencial soportados para la verificación incluyen **jwt_vp_json** (W3C) y **vc+sd-jwt** (SD-JWT VC).
+Los formatos de credencial soportados para la verificación incluyen **jwt_vc_json** (W3C) y **dc+sd-jwt** (SD-JWT VC).
 
 ---
 
@@ -29,9 +29,9 @@ sequenceDiagram
     Note over W, C: Inicio de Presentación
     C->>V: Crea solicitud de presentación
     V-->>C: Retorna ID de sesión + QR/URI
-    C->>W: Muestra QR o Deep Link
-    W->>V: Recupera detalles de la solicitud
-    V-->>W: Retorna Presentation Definition
+    C->>W: Muestra QR o Deep Link⠀⠀⠀⠀⠀⠀⠀⠀
+    W->>V: Recupera JWT de solicitud
+    V-->>W: Retorna JWT firmado
     Note over W: El titular selecciona los claims
     W->>V: Envía Presentación (POST Direct Post)
 
@@ -41,8 +41,8 @@ sequenceDiagram
     deactivate V
 
     V-->>W: HTTP 200 OK
-    C->>V: Consulta resultado de verificación
-    V-->>C: Retorna claims validados
+    V-->>C: Notifica vía SSE (redirect URL + auth code)
+    C->>V: Intercambia auth code por tokens (OAuth 2.0)
 ```
 
 ---
@@ -59,7 +59,7 @@ El objeto central de OID4VP es la solicitud de presentación. A continuación se
   "jti": "550e8400-e29b-41d4-a716-446655440000",
   "client_id": "did:key:z6Mk...",
   "nonce": "a4f8c2d1-3e7b-4a9d-b5f0-1c6e2a8d4f7b",
-  "response_uri": "https://verifier.example.com/verifier/oid4vp/auth-response",
+  "response_uri": "https://verifier.example.com/oid4vp/auth-response",
   "scope": "openid learcredential.employee",
   "state": "9f3b1c2a-7e4d-48a5-b0f2-3d6c8e1a5b9f",
   "response_type": "vp_token",
