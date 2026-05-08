@@ -14,14 +14,14 @@ Pasos para emitir una credencial desde el portal.
 
     ![Pantalla de escaneo de QR en el wallet](../../assets/img/users/issuer-portal/wallet-scan.png){ width="240" }
 
+    !!! note "Más información sobre presentar credenciales desde el wallet"
+        - [Presentar credenciales](../wallet-eudiw/present-credentials.md)
+
     Seleccionar la credencial organizativa y confirmar.
 
     ![Selección de credencial organizativa en el wallet](../../assets/img/users/issuer-portal/valid-credential.png){ width="320" }
 
     El portal dará acceso automáticamente.
-
-    !!! note "Más información sobre presentar credenciales desde el wallet"
-        - [Presentar credenciales](../wallet-eudiw/present-credentials.md)
 
 2. **Pulsar *Nueva credencial***: tras el acceso, el portal muestra la tabla de credenciales emitidas. Pulsar el botón **Nueva credencial** para iniciar el proceso de emisión.
 

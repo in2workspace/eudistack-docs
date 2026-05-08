@@ -10,6 +10,10 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si el pr
 - **Causa probable**: el QR ha caducado, la oferta ya se consumió o el wallet no es del tenant correcto.
 - **Solución**: solicitar una nueva oferta al emisor; verificar que el wallet pertenece al mismo tenant que el emisor (mismo dominio).
 
+    !!! note "Páginas relacionadas"
+        - [Emitir una credencial](issuer-portal/issue-credential.md) — cómo el emisor genera una nueva oferta
+        - [Recibir credenciales](wallet-eudiw/receive-credentials.md) — cómo aceptar la nueva oferta desde el wallet
+
 ### Error al crear el passkey
 
 - **Síntoma**: al activar el wallet, la creación del passkey falla.
@@ -25,6 +29,9 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si el pr
     ![Pantalla de verificación de credencial](../../assets/img/users/troubleshooting/revoke.png){ width="240" }
 
     Si la credencial aparece como revocada, contactar con el emisor; es necesario solicitar una nueva credencial.
+
+    !!! note "Páginas relacionadas"
+        - [Gestionar credenciales](wallet-eudiw/manage-credentials.md) — cómo verificar y gestionar el estado de las credenciales en el wallet
 
 ## Portal Issuer
 
