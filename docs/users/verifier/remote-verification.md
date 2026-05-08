@@ -12,7 +12,7 @@ Verificación online de credenciales: el verifier solicita una credencial al usu
     ![Pantalla Solicitud de Credencial](../../assets/img/users/wallet-eudiw/vc-select.png){ width="240" }
 
     !!! note "Cómo presentar credenciales desde el wallet"
-        - [Presentar credencialesW](../wallet-eudiw/present-credentials.md)
+        - [Presentar credenciales](../wallet-eudiw/present-credentials.md)
 
 3. **El usuario selecciona la credencial** y confirma el envío con su passkey.
 

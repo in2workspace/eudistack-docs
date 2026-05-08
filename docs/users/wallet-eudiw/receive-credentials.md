@@ -21,11 +21,19 @@ Cómo aceptar una credencial verificable emitida por un Issuer.
       <figcaption>Correo — QR y botón Abrir en Wallet</figcaption>
     </figure>
 
+    !!! info "Validez del QR"
+        - **QR en pantalla**: válido durante **10 minutos** desde que aparece en pantalla.
+        - **QR por email**: válido durante **10 minutos** desde el momento del envío,
+          no desde que se abre el correo. Si el correo tarda en llegar o se abre
+          más tarde, el tiempo disponible puede ser menor.
+
+          Si el QR ha expirado, usar el enlace **Solicitar uno nuevo** del correo.
+
     Para escanear el QR desde el wallet: pulsar la pestaña *Escaneo QR* en la barra de navegación inferior.
 
     ![Barra de navegación inferior del wallet](../../assets/img/users/wallet-eudiw/nav-bottom-qr.png){ width="240" }
 
-    Apuntar la cámara al código QR. También es posible pegar URL manualmente en el campo de texto.
+    Apuntar la cámara al código QR. También es posible la URL manualmente en el campo de texto.
 
     ![Pantalla de escaneo de QR en el wallet](../../assets/img/users/wallet-eudiw/wallet-scan.png){ width="240" }
 

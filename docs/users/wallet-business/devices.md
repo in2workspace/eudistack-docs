@@ -4,11 +4,13 @@ El Business Wallet permite operar desde varios dispositivos. Cada dispositivo se
 
 ## Sección Dispositivos
 
-Disponible en **Ajustes → Mis Dispositivos**. Lista todos los passkeys vinculados a la cuenta con la siguiente información:
+Disponible en **Ajustes → Mis Dispositivos**. 
 
 ![Campo Mis Dispositivos en Ajustes](../../assets/img/users/wallet-buisiness/my-divices.png){ width="320" }
 
 ![Pantalla Mis Dispositivos — detalle de un dispositivo registrado](../../assets/img/users/wallet-buisiness/detail-device.png){ width="320" }
+
+Lista todos los passkeys vinculados a la cuenta con la siguiente información:
 
 - Nombre del dispositivo.
 - Sesiones activas.

@@ -1,10 +1,6 @@
 # Presentar credenciales — EUDIW
 
-Cómo compartir credenciales con un Verifier de forma controlada y selectiva.
-
-## Qué es la divulgación selectiva
-
-Las credenciales en formato SD-JWT permiten **revelar solo los atributos necesarios** para cada solicitud, sin exponer el resto de la información de la credencial.
+Un Verifier es un servicio o portal que solicita y valida credenciales, por ejemplo, para verificar la identidad de un usuario, permitirle iniciar sesión o acreditar determinados atributos.
 
 ## Pasos
 

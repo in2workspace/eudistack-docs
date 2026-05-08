@@ -33,6 +33,7 @@ El estado de cada emisión es visible tanto en la tabla del listado como en la p
 - **EXPIRADO**: la credencial ha superado su fecha de validez.
 - **RETIRADO**: el emisor ha cancelado la oferta antes de que el destinatario la aceptara.
 - **REVOCADO**: el emisor ha revocado la credencial explícitamente; deja de ser válida aunque no haya alcanzado su fecha de caducidad.
+- **EMITIDO**: el destinatario ha aceptado la credencial pero todavía no ha empezado su periodo de validez.
 
 ![](../../assets/img/users/issuer-portal/status.png){ width="400" }
 

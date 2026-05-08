@@ -13,8 +13,3 @@ Mismo flujo que en EUDIW. Consulta [Presentar credenciales (EUDIW)](../wallet-eu
 ## Gestionar credenciales
 
 Mismo flujo que en EUDIW. Consulta [Gestionar credenciales (EUDIW)](../wallet-eudiw/manage-credentials.md).
-
-## Diferencias prácticas
-
-- Cada confirmación pasa por una autenticación reforzada (passkey + servidor).
-- Si tu passkey caduca o el servidor de claves no está accesible, el wallet mostrará un error explícito y no permitirá completar la operación.
