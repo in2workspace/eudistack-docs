@@ -12,7 +12,7 @@ Las credenciales en formato SD-JWT permiten **revelar solo los atributos necesar
 
     Para escanear el QR desde el wallet: pulsar la pestaña *Escaneo QR* en la barra de navegación inferior.
 
-    ![Barra de navegación inferior del wallet](../../assets/img/users/wallet-eudiw/nav-bottom.png){ width="240" }
+    ![Barra de navegación inferior del wallet](../../assets/img/users/wallet-eudiw/nav-bottom-qr.png){ width="240" }
 
     Apuntar la cámara al código QR. También es posible pegar la URL manualmente en el campo de texto.
 

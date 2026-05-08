@@ -10,7 +10,6 @@ Pulsar la pestaña *Credenciales* en la barra de navegación inferior.
 
 ## Lista de Credenciales 
 
-
 Lista todas las credenciales activas con:
 
 - Tipo de credencial.
@@ -23,11 +22,11 @@ Lista todas las credenciales activas con:
 
 - Fecha de emisión y caducidad.
 
-![Lista de credenciales en la pestaña Credenciales](../../assets/img/users/wallet-eudiw/new-vc.png){ width="240" }
-
 ## Acciones
 
 - **Ver detalles**: pulsar la tarjeta de una credencial para mostrar todos sus atributos.
+
+    ![Lista de credenciales en la pestaña Credenciales](../../assets/img/users/wallet-eudiw/vc-list.png){ width="240" }
 
     ![Detalles de credencial](../../assets/img/users/wallet-eudiw/vc-detail.png){ width="240" }
     

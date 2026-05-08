@@ -16,5 +16,5 @@ Mismo flujo que en EUDIW. Consulta [Gestionar credenciales (EUDIW)](../wallet-eu
 
 ## Diferencias prácticas
 
-- Las credenciales se almacenan en el servidor de la organización, no en el navegador del dispositivo. Están disponibles desde cualquier dispositivo registrado.
-- El acceso al wallet requiere autenticación con passkey. Si la sesión ha caducado, es necesario autenticarse de nuevo desde el dispositivo en uso.
+- Cada confirmación pasa por una autenticación reforzada (passkey + servidor).
+- Si tu passkey caduca o el servidor de claves no está accesible, el wallet mostrará un error explícito y no permitirá completar la operación.

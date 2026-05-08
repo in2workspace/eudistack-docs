@@ -31,6 +31,8 @@ Primera activación del Business Wallet: verificación del email corporativo, cr
 
 5. **Acceso confirmado**: ya es posible recibir y presentar credenciales desde el Business Wallet.
 
+    ![Pantalla de confirmación de acceso al Business Wallet](../../assets/img/users/wallet-buisiness/access-confirmation.png){ width="320" }
+
 ## Siguiente paso
 
 [Gestionar dispositivos →](devices.md)
