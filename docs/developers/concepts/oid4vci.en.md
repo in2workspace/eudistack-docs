@@ -71,7 +71,7 @@ To initiate either of the two flows, the wallet needs to resolve an offer URL. T
 
 ```json
 {
-  "credential_issuer": "[https://issuer.sandbox.eudistack.net](https://issuer.sandbox.eudistack.net)",
+  "credential_issuer": "https://issuer.sandbox.eudistack.net",
   "credential_configuration_ids": [
     "learcredential.employee.w3c.4"
   ],
@@ -92,7 +92,7 @@ To initiate either of the two flows, the wallet needs to resolve an offer URL. T
 
 ```json
 {
-  "credential_issuer": "[https://issuer.sandbox.eudistack.net](https://issuer.sandbox.eudistack.net)",
+  "credential_issuer": "https://issuer.sandbox.eudistack.net",
   "credential_configuration_ids": [
     "learcredential.employee.w3c.4"
   ],
