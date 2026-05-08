@@ -27,7 +27,7 @@ El siguiente diagrama ilustra esta separación de responsabilidades:
 
 ```mermaid
 flowchart TD
-    subgraph Emision ["Fase 1: Emisión "]
+    subgraph Emision ["Fase 1: Emisión"]
         JWT["1. Issuer-signed JWT<br/>(Datos inmutables y Hashes)"]
         DISC["2. Disclosures<br/>(Todos los atributos individuales)"]
 
