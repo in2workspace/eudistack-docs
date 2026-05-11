@@ -11,8 +11,6 @@ It allows you to validate complete issuance and verification flows using OID4VCI
 - No SLA — intended for development purposes only.
 
 ## How to request access
-<!-- TODO: concrete steps: form, email, keys, etc. -->
-
 Access to the sandbox is managed manually by the EUDIStack team.
 
 1. Contact the team through the support page.

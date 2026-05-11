@@ -14,9 +14,6 @@ Permite validar flujos completos de emisión y verificación utilizando OID4VCI 
 - Sin SLA — pensado solo para desarrollo.
 
 ## Cómo solicitar acceso
-
-<!-- TODO: pasos concretos: contacto con soporte. -->
-
 El acceso al sandbox se gestiona manualmente por el equipo de EUDIStack.
 
 1. Contacta con el equipo a través de la página de soporte.
