@@ -31,8 +31,6 @@ sequenceDiagram
 4. **Inicia una verificación** desde el Verifier (POST `/authorization-request`).
 5. **Recoge el resultado** vía callback o polling.
 
-<!-- TODO: ejemplos curl completos para cada paso, contra sandbox -->
-
 ## Próximos pasos
 
 - [Conceptos: OID4VCI](../concepts/oid4vci.md)
