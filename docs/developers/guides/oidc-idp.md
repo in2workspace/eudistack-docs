@@ -59,8 +59,8 @@ sequenceDiagram
     Portal->>Verifier: GET /api/login/events?state=... (SSE)
     Note over Portal,Verifier: Conexión SSE abierta esperando resultado
 
-    Wallet->>Verifier: GET /oid4vp/auth-request/{nonce} (escanea QR)
-    Wallet->>Verifier: POST /oid4vp/auth-response (VP Token)
+    Wallet->>Verifier: GET /authorization-request (escanea QR)
+    Wallet->>Verifier: POST /response (VP Token)
     Note over Verifier: Valida credencial, firma y revocación
 
     Verifier-->>Portal: SSE event: redirect URL con code
