@@ -93,10 +93,12 @@ El Wallet interpretará automáticamente la oferta.
 ## Paso 3: Canje de credencial (OID4VCI)
 
 Si el flujo es **pre-authorized code**:
+
 - El Wallet solicita un **código de activación** `tx_code`.
 - Introduce el código recibido por email.
 
 Una vez validado:
+
 - El Wallet intercambia el `pre-authorized_code` por un `access_token` 
 - Descarga la credencial firmada desde el Issuer.
 - Almacena la credencial en el Wallet del usuario.

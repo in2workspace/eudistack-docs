@@ -87,10 +87,12 @@ The Wallet will automatically interpret the offer.
 
 ## Step 3: Credential redemption (OID4VCI)
 If the flow is pre-authorized code:
+
 - The Wallet requests an **activation code** (`tx_code`).
 - Enter the code received by email.
 
 Once validated:
+
 - The Wallet exchanges the pre-authorized_code for an access_token.
 - Downloads the signed credential from the Issuer.
 - Stores the credential in the user's Wallet.
