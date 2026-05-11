@@ -91,7 +91,7 @@ El Verifier traduce el scope **learcredential.employee** en una consulta DCQL qu
 
 ### Paso 2: Token Request
 
-Una vez que el usuario escanea el QR y presenta la credencial desde su wallet, el Verifier notifica al Portal vía SSE con la URL de redirección que incluye el **code**. El Portal redirige el browser del usuario a tu `redirect_uri`. Tu backend recibe el **code** y debe canjearlo en **/oidc/token**:
+Una vez que el usuario escanea el QR y presenta la credencial desde su wallet, el Verifier notifica al Portal vía SSE con la URL de redirección que incluye el **code**. El Portal redirige el browser del usuario a tu `redirect_uri`. Tu backend recibe el **code** y debe canjearlo en **/verifier/oidc/token**:
 
 ```http
 POST /verifier/oidc/token
