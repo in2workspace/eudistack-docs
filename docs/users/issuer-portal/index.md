@@ -1,6 +1,6 @@
 # Portal Issuer
 
-El Portal Issuer es la consola web desde la que tu organización **emite credenciales** a los usuarios finales (empleados, clientes, ciudadanos). El portal se accede vía login con credencial verificable (no usa contraseñas).
+El Portal Issuer es la consola web desde la que la organización **emite credenciales** a los usuarios finales (empleados, clientes, ciudadanos). El acceso se realiza mediante credencial verificable, sin contraseñas.
 
 ## En esta sección
 
@@ -12,11 +12,9 @@ El Portal Issuer es la consola web desde la que tu organización **emite credenc
 
 -   :material-format-list-bulleted: [**Gestionar emisiones**](manage-issuances.md)
 
-    Consultar el estado de las emisiones lanzadas, reenviar o revocar.
+    Consultar el estado de las emisiones lanzadas y operar sobre ellas.
 
 </div>
 
 !!! note "Acceso al portal"
-    Para acceder necesitas una credencial corporativa válida (LEARCredentialEmployee o equivalente). Si no tienes credencial, pídela a tu administrador.
-
-<!-- TODO: añadir capturas del portal de emisión -->
+    Para acceder es necesaria una credencial corporativa válida (LEARCredentialEmployee o equivalente). Si no se dispone de credencial, solicitarla al administrador de la organización.

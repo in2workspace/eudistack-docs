@@ -1,24 +1,31 @@
 # Presentar credenciales — EUDIW
 
-<!-- TODO: contenido pendiente -->
+Un Verifier es un servicio o portal que solicita y valida credenciales, por ejemplo, para verificar la identidad de un usuario, permitirle iniciar sesión o acreditar determinados atributos.
 
-Cómo compartir credenciales con un Verifier de forma controlada y selectiva.
+## Pasos
 
-## Qué es la divulgación selectiva
+1. **El Verifier presenta una solicitud**: QR o URL.
 
-Las credenciales SD-JWT permiten **revelar solo los atributos necesarios**. Por ejemplo, para demostrar que eres mayor de edad sin revelar tu fecha de nacimiento exacta.
+    Para escanear el QR desde el wallet: pulsar la pestaña *Escaneo QR* en la barra de navegación inferior.
 
-## Flujo paso a paso
+    ![Barra de navegación inferior del wallet](../../assets/img/users/wallet-eudiw/nav-bottom-qr.png){ width="240" }
 
-1. **El Verifier presenta una solicitud**: QR o redirección.
-2. **El wallet muestra qué se está pidiendo**: emisor que confías, qué atributos, para qué fin.
-3. **Eliges qué compartir**: marca/desmarca atributos (cuando proceda).
-4. **Confirmas con tu passkey**: el wallet firma y envía la presentación.
+    Apuntar la cámara al código QR. También es posible pegar la URL manualmente en el campo de texto.
 
-<!-- TODO: insertar capturas del flujo OID4VP desde la perspectiva del usuario -->
+    ![Pantalla de escaneo de QR en el wallet](../../assets/img/users/wallet-eudiw/wallet-scan.png){ width="240" }
+
+2. **El Wallet muestra las credenciales que coincide con la solicitud**.
+
+    ![Pantalla Solicitud de Credencial](../../assets/img/users/wallet-eudiw/vc-select.png){ width="240" }
+
+3. **Seleccionar la credencial a presentar**: pulsar la tarjeta correspondiente.
+
+4. **El wallet firma y envía la presentación**: el dispositivo solicita autenticación (passkey o biometría) como parte del proceso de firma.
+
+    ![Diálogo de confirmación — ¿Enviar Credencial?](../../assets/img/users/wallet-eudiw/vc-select-confirm.png){ width="240" }
 
 ## Privacidad
 
-- Solo se envía lo que confirmas.
-- El wallet registra cada presentación en *Actividad* (puedes consultarla en cualquier momento).
-- Puedes denegar la presentación sin penalización.
+- Solo se envía lo que se confirma.
+- El wallet registra cada presentación en *Actividad*, accesible desde **Ajustes → Actividad**.
+- Es posible denegar la presentación sin penalización. Si se desea reintentar, escanear de nuevo el QR o enlace del Verifier; en algunos casos puede ser necesario solicitar uno nuevo.

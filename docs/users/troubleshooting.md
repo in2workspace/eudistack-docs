@@ -1,42 +1,55 @@
 # Solución de problemas — Usuarios
 
-<!-- TODO: ampliar con incidencias reales detectadas en producción -->
-
-Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si tu caso no aparece, consulta [soporte](../support.md).
+Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si el problema no aparece, consulta [soporte](../support.md).
 
 ## Wallet
 
 ### El QR de la oferta no se abre
 
-- **Síntoma**: escaneas el QR y no pasa nada, o sale un error.
+- **Síntoma**: al escanear el QR no ocurre ninguna acción, o aparece un error.
 - **Causa probable**: el QR ha caducado, la oferta ya se consumió o el wallet no es del tenant correcto.
-- **Solución**: pide una nueva oferta al emisor; verifica que estás usando el wallet del mismo tenant que el emisor (mismo dominio).
+- **Solución**: solicitar una nueva oferta al emisor; verificar que el wallet pertenece al mismo tenant que el emisor (mismo dominio).
 
-### No puedo crear el passkey
+    !!! note "Páginas relacionadas"
+        - [Emitir una credencial](issuer-portal/issue-credential.md) — cómo el emisor genera una nueva oferta
+        - [Recibir credenciales](wallet-eudiw/receive-credentials.md) — cómo aceptar la nueva oferta desde el wallet
+
+### Error al crear el passkey
 
 - **Síntoma**: al activar el wallet, la creación del passkey falla.
 - **Causa probable**: el navegador o sistema operativo no soporta WebAuthn con extensión PRF.
-- **Solución**: actualiza navegador y SO a las últimas versiones. En iOS exige iOS 17+; en Android, Chrome 122+.
+- **Solución**: actualiza el navegador y SO a las últimas versiones. En iOS exige iOS 17+; en Android, Chrome 122+.
 
 ### La credencial aparece como revocada
 
-- **Síntoma**: al presentarla a un Verifier, te informa de que la credencial está revocada.
+- **Síntoma**: al presentarla a un Verifier, este informa de que la credencial está revocada.
 - **Causa probable**: el emisor revocó la credencial (cambio de rol, baja en la organización).
-- **Solución**: contacta con el emisor; necesitarás una nueva credencial.
+- **Solución**: antes de contactar con el emisor, comprobar el estado actual de la credencial: abrir el detalle de la credencial en el wallet y pulsar **Verificar credencial**.
+
+    ![Pantalla de verificación de credencial](../../assets/img/users/troubleshooting/revoke.png){ width="240" }
+
+    Si la credencial aparece como revocada, contactar con el emisor; es necesario solicitar una nueva credencial.
+
+    !!! note "Páginas relacionadas"
+        - [Gestionar credenciales](wallet-eudiw/manage-credentials.md) — cómo verificar y gestionar el estado de las credenciales en el wallet
 
 ## Portal Issuer
 
-### No puedo iniciar sesión
+### Error al iniciar sesión
 
 - **Síntoma**: el login con credencial verificable falla.
-- **Causa probable**: tu credencial corporativa ha caducado o ha sido revocada.
-- **Solución**: contacta con el administrador de tu organización para que te emita una nueva.
+- **Causa probable**:  credencial corporativa ha caducado o ha sido revocada.
+- **Solución**: contactar con el administrador de la organización para que emita una nueva.
 
 ### El destinatario no recibe la oferta
 
-- **Síntoma**: emites la credencial pero el destinatario nunca la recibe.
-- **Causa probable**: email/SMS bloqueado o dirección incorrecta.
-- **Solución**: revisa en la pestaña *Credenciales* el estado y reenvía la oferta; verifica el contacto del destinatario.
+- **Síntoma**: la credencial se emite pero el destinatario no la recibe.
+- **Causa probable**: email filtrado como spam o dirección de correo incorrecta.
+- **Solución**:
+    - **Email en spam**: pedir al destinatario que revise la carpeta de spam.
+    - **Dirección incorrecta**: en el portal Issuer, abrir el detalle de la emisión, usar **Retirar** para cancelar y emitir una nueva credencial con la dirección correcta.
+
+        ![Credencial en estado BORRADOR con botón Retirar](../../assets/img/users/issuer-portal/withdraw.png){ width="560" }
 
 ## Verifier
 
@@ -44,7 +57,7 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si tu ca
 
 - **Síntoma**: el usuario confirma en su wallet pero el verifier no recibe nada.
 - **Causa probable**: timeout de la sesión o problemas de red.
-- **Solución**: reinicia la solicitud. Si persiste, abre un ticket con el ID de sesión.
+- **Solución**: reiniciar la solicitud. Si persiste, abrir un ticket con el ID de sesión.
 
 ---
 
@@ -55,4 +68,4 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si tu ca
 - Wallet/aplicación afectada.
 - Captura del error si la hay.
 - Hora aproximada del incidente.
-- Tu organización (tenant).
+- La organización (tenant).

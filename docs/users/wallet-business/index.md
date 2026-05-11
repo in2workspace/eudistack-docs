@@ -1,18 +1,24 @@
 # Wallet — Business Wallet
 
-El **European Business Wallet (EBW)** es la versión **organizacional** del wallet. A diferencia del EUDIW personal, las claves criptográficas se custodian en un servidor seguro y se desbloquean con autenticación reforzada (passkey vinculado al dispositivo del usuario). Pensado para empleados que actúan en nombre de su organización.
+El **European Business Wallet (EBW)** es la versión para usuarios corporativos del wallet. A diferencia del EUDIW personal, las credenciales se almacenan en el servidor de la organización y son accesibles desde varios dispositivos registrados. Las claves criptográficas se generan en el dispositivo con el passkey (biometría o PIN) y nunca salen de él.
 
-!!! tip "¿Cómo sé que estoy en Business Wallet?"
-    Abre **Ajustes → Acerca de**. El indicador de modo mostrará `Business Wallet`. Además, en *Ajustes* aparecerá una sección **Dispositivos y claves** que no existe en el EUDIW personal.
+!!! tip "¿Cómo identificar el Business Wallet?"
+    En **Ajustes**, el campo **Tipo de wallet** muestra el modo activo: `Business Wallet`.
+
+    ![Campo Tipo de wallet en Ajustes](../../assets/img/users/wallet-buisiness/type-wallet.png){ width="320" }
+
+    Además, en Ajustes aparece la sección **Mis Dispositivos**, que no existe en el EUDIW personal.
+
+    ![Sección Mis Dispositivos en Ajustes](../../assets/img/users/wallet-buisiness/devices.png){ width="320" }
 
 ## Diferencias clave frente al EUDIW
 
 | Característica | EUDIW (personal) | Business Wallet |
 |---|---|---|
-| Custodia de claves | Dispositivo del usuario | Servidor (HSM) |
-| Vinculación a organización | No | Sí |
+| Almacenamiento de credenciales | Navegador del dispositivo | Servidor de la organización |
+| Claves criptográficas | Dispositivo del usuario (passkey) | Dispositivo del usuario (passkey) |
 | Multi-dispositivo | No | Sí (gestión de dispositivos) |
-| Recuperación si pierdes el dispositivo | No | Sí, vía dispositivo de respaldo |
+| Acceso desde dispositivo de respaldo | No | Sí |
 
 ## En esta sección
 
@@ -20,16 +26,14 @@ El **European Business Wallet (EBW)** es la versión **organizacional** del wall
 
 -   :material-rocket-launch: [**Primeros pasos**](getting-started.md)
 
-    Activa tu cuenta empresarial, registra el primer dispositivo y vincula tu passkey.
+    Activar la cuenta, verificar el email corporativo y crear el passkey en el primer dispositivo.
 
 -   :material-key-chain: [**Dispositivos y claves**](devices.md)
 
-    Gestiona los dispositivos autorizados desde los que puedes operar.
+    Gestionar los dispositivos autorizados desde los que es posible operar.
 
 -   :material-briefcase-clock: [**Operativa diaria**](daily-operations.md)
 
     Recibir y presentar credenciales en nombre de la organización.
 
 </div>
-
-<!-- TODO: añadir capturas del wallet PWA en modo server -->

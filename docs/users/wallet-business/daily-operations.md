@@ -1,8 +1,6 @@
 # Operativa diaria — Business Wallet
 
-<!-- TODO: contenido pendiente -->
-
-Las operaciones del día a día (recibir, presentar y gestionar credenciales) son **idénticas a las del EUDIW personal**, salvo por el factor de autenticación: cada operación criptográfica requiere desbloquear el passkey vinculado al dispositivo en uso.
+Las operaciones del día a día (recibir, presentar y gestionar credenciales) siguen el mismo flujo que en el  [Wallet EUDIW](../wallet-eudiw/index.md). La diferencia principal es que las credenciales se almacenan en el servidor de la organización y son accesibles desde cualquier dispositivo registrado en la cuenta.
 
 ## Recibir credenciales
 
@@ -15,8 +13,3 @@ Mismo flujo que en EUDIW. Consulta [Presentar credenciales (EUDIW)](../wallet-eu
 ## Gestionar credenciales
 
 Mismo flujo que en EUDIW. Consulta [Gestionar credenciales (EUDIW)](../wallet-eudiw/manage-credentials.md).
-
-## Diferencias prácticas
-
-- Cada confirmación pasa por una autenticación reforzada (passkey + servidor).
-- Si tu passkey caduca o el servidor de claves no está accesible, el wallet mostrará un error explícito y no permitirá completar la operación.

@@ -1,26 +1,53 @@
 # Gestionar credenciales — EUDIW
 
-<!-- TODO: contenido pendiente -->
+Cómo consultar y eliminar credenciales del wallet.
 
-Cómo consultar, organizar y eliminar credenciales del wallet.
+## Cómo acceder a las credenciales
 
-## Pestaña Credenciales
+Pulsar la pestaña *Credenciales* en la barra de navegación inferior.
+
+![Barra de navegación inferior — pestaña Credenciales](../../assets/img/users/wallet-eudiw/nav-bottom-vc.png){ width="240" }
+
+## Lista de Credenciales 
 
 Lista todas las credenciales activas con:
 
-- Tipo de credencial (Employee, ID, Estudios...).
+- Tipo de credencial.
 - Emisor.
-- Estado (válida, expirada, revocada).
+- Estado:
+
+    - **VÁLIDO**: la credencial está vigente y puede utilizarse para presentaciones.
+    - **EXPIRADO**: la credencial ha superado su fecha de caducidad y no puede presentarse.
+    - **REVOCADO**: el emisor ha invalidado la credencial; no puede utilizarse para presentaciones.
+
 - Fecha de emisión y caducidad.
 
 ## Acciones
 
-- **Ver detalle**: muestra todos los atributos de la credencial.
-- **Compartir**: inicia un flujo de presentación manual.
-- **Eliminar**: borra la credencial localmente (no la revoca en el emisor).
+- **Ver detalles**: pulsar la tarjeta de una credencial para mostrar todos sus atributos.
+
+    ![Lista de credenciales en la pestaña Credenciales](../../assets/img/users/wallet-eudiw/vc-list.png){ width="240" }
+
+    ![Detalles de credencial](../../assets/img/users/wallet-eudiw/vc-detail.png){ width="240" }
+    
+- **Verificar credencial**: comprueba la validez de la credencial en el momento. Muestra el emisor, la fecha de emisión, la fecha de expiración y el estado de revocación. El botón se encuentra en la parte inferior de la pantalla de detalles de la credencial.
+
+    ![Botón Verificar credencial en la pantalla de detalles](../../assets/img/users/wallet-eudiw/vc-verification-button.png){ width="240" }
+
+    ![Pantalla de verificación de credencial](../../assets/img/users/wallet-eudiw/vc-verification.png){ width="240" }
+
+- **Eliminar**: borra la credencial localmente (no la revoca en el emisor). El botón se encuentra en la parte inferior de la pantalla de detalles de la credencial.
+
+    ![Botón Eliminar en la pantalla de detalles](../../assets/img/users/wallet-eudiw/vc-delete-button.png){ width="240" }
 
 ## Actividad
 
-La pestaña *Actividad* lista cada presentación enviada y cada credencial recibida, con timestamp y verifier/issuer asociado.
+Acceder desde **Ajustes → Actividad**. Lista cada presentación enviada y cada credencial recibida, con timestamp e issuer/verifier asociado.
 
-<!-- TODO: insertar capturas de la pestaña Credenciales y Actividad -->
+<figure markdown style="display: table; margin-left: 0;">
+![Campo Actividad en Ajustes](../../assets/img/users/wallet-eudiw/activity.png){ width="320" }
+</figure>
+
+<figure markdown style="display: table; margin-left: 0;">
+![Historial de actividad](../../assets/img/users/wallet-eudiw/activity-detail.png){ width="240" }
+</figure>
