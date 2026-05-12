@@ -49,6 +49,8 @@ jobs:
             --verbose --no-progress
             --exclude 'https://github.com/in2workspace/eudistack-core-wallet-ebw'
             --exclude-path 'CONTEXT.md'
+            --exclude-path 'assets/img/users/issuer-portal/withdraw.png'
+            --exclude-path 'assets/img/users/troubleshooting/revoke.png'
             './**/*.md' './**/*.html'
 
   # ---------------------------------------------------------------------------
