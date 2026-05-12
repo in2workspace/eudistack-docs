@@ -1,4 +1,4 @@
-# Historial de cambios - EUDIStack
+# Changelog
 
 Aquí encontrarás un resumen de las novedades y mejoras más relevantes de la plataforma EUDIStack, organizado por versión y componente. Si necesitas el detalle técnico completo de cada componente, puedes consultar los changelogs individuales en GitHub.
 
