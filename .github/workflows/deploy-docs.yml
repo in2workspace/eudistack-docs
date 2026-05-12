@@ -36,10 +36,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress './**/*.md' './**/*.html'
+
   # ---------------------------------------------------------------------------
   # Build Job
   # ---------------------------------------------------------------------------
   build:
+    needs: lychee
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
