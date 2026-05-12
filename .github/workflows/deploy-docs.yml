@@ -86,11 +86,71 @@ jobs:
           path: site
 
   # ---------------------------------------------------------------------------
+  # Accessibility Audit Job
+  # ---------------------------------------------------------------------------
+  a11y:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pa11y-ci and axe runner
+        run: npm install -g pa11y-ci pa11y-ci-reporter-html @pa11y/runner-axe
+
+      - name: Download built site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: site-artifact
+
+      - name: Extract site artifact
+        run: |
+          mkdir -p site
+          tar -xf site-artifact/artifact.tar -C site
+
+      - name: Serve site locally
+        run: |
+          npm install -g serve
+          serve -s site -l 8000 &
+          sleep 3
+
+      - name: Run pa11y-ci accessibility audit
+        run: pa11y-ci --config .pa11yci.json --reporter cli --reporter json > pa11y-results.json || true
+
+      - name: Upload accessibility report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a11y-report
+          path: pa11y-results.json
+
+      - name: Fail if accessibility errors found
+        run: |
+          ERRORS=$(node -e "
+            const r = require('./pa11y-results.json');
+            const total = Object.values(r.results).reduce((acc, page) => acc + page.length, 0);
+            console.log(total);
+          ")
+          echo "Total accessibility issues: $ERRORS"
+          if [ "$ERRORS" -gt "0" ]; then
+            echo "Accessibility audit failed with $ERRORS issues."
+            exit 1
+          else
+            echo "No accessibility issues found."
+          fi
+  
+  # ---------------------------------------------------------------------------
   # Deploy Job (only on main branch)
   # ---------------------------------------------------------------------------
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
+    needs: [build, a11y]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
