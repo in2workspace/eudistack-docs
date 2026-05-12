@@ -1,22 +1,29 @@
 # Wallet (EBW) API
 
-<!-- TODO: enlazar/embeber spec OpenAPI desde eudistack-core-wallet-ebw -->
+API server-side del European Business Wallet. 
+Solo aplica al modo *Server* (Business Wallet); el modo *Browser* (EUDIW personal) opera 100% en el dispositivo del usuario.
 
-API server-side del European Business Wallet. Solo aplica al modo *Server* (Business Wallet); el modo *Browser* (EUDIW personal) opera 100% en el dispositivo del usuario.
+## OpenAPI Specification
+
+La API está documentada mediante OpenAPI 3.0 generado automáticamente: 
+
+- [Wallet API (Swagger UI)](https://sandbox-stg.eudistack.net/wallet/springdoc/swagger-ui.html).
+
 
 ## Endpoints principales
 
-| Método | Path | Descripción |
-|---|---|---|
-| POST | `/users/register` | Alta de usuario corporativo. |
-| POST | `/users/{id}/devices` | Registrar un nuevo dispositivo (passkey). |
-| DELETE | `/users/{id}/devices/{deviceId}` | Revocar un dispositivo. |
-| POST | `/credentials` | Almacenar una credencial recibida (interno OID4VCI). |
-| POST | `/presentations` | Generar una presentación firmada (interno OID4VP). |
+| Método | Path | Descripción | Auth |
+|--------|------|-------------|------|
+| POST | `/api/v1/credentials` | Almacenar credencial en el wallet | JWT + DPoP |
+| GET | `/api/v1/credentials` | Listar credenciales del usuario | JWT + DPoP |
+| GET | `/api/v1/credentials/{id}` | Obtener credencial concreta | JWT + DPoP |
+| PATCH | `/api/v1/credentials/{id}/status` | Actualizar estado (active/revoked) | JWT + DPoP |
+| DELETE | `/api/v1/credentials/{id}` | Eliminar credencial | JWT + DPoP |
+| POST | `/api/v1/openid-credential-offer/credential-response` | Finaliza el flujo OID4VCI (emisión de credencial) | JWT + DPoP |
 
-<!-- TODO: spec OpenAPI inline -->
+## Notas técnicas
 
-## Notas
-
-- Todos los endpoints requieren autenticación de la sesión del usuario más DPoP.
-- La gestión de claves criptográficas vive en HSM/KMS y nunca sale al cliente.
+- Autenticación: OAuth2 + JWT + DPoP binding
+- Credenciales almacenadas cifradas en backend seguro (HSM/KMS)
+- El Wallet Server actúa solo en modo *Business Wallet*
+- El modo EUDIW (browser) no expone APIs server-side
