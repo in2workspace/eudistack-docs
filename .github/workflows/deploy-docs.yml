@@ -99,34 +99,23 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Cache dependencies
-        uses: actions/cache@v4
+      - name: Download built site artifact
+        uses: actions/download-artifact@v4
         with:
-          key: mkdocs-material-${{ hashFiles('requirements.txt') }}
-          path: ~/.cache/pip
-          restore-keys: |
-            mkdocs-material-
+          name: github-pages
+          path: site-artifact
 
-      - name: Install Python dependencies
+      - name: Extract site artifact
         run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Build documentation
-        run: mkdocs build
+          mkdir -p site
+          cd site && tar -xf ../site-artifact/artifact.tar
+          echo "Site extracted, $(find . -name '*.html' | wc -l) HTML files found"
 
       - name: Install pa11y-ci
         run: npm install -g pa11y-ci
@@ -156,13 +145,11 @@ jobs:
             echo "pa11y-results.json está vacío o no existe"
             exit 1
           fi
-
           if ! node -e "JSON.parse(require('fs').readFileSync('pa11y-results.json','utf8'))" 2>/dev/null; then
             echo "El fichero no contiene JSON válido, contenido:"
             cat pa11y-results.json
             exit 1
           fi
-
           ERRORS=$(node -e "
             const fs = require('fs');
             const r = JSON.parse(fs.readFileSync('pa11y-results.json', 'utf8'));
