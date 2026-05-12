@@ -24,7 +24,7 @@ Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en
 
     ---
 
-    Emite credenciales verificables a tus usuarios desde la consola web.
+    Emite credenciales verificables a los usuarios desde la consola web.
 
     [:octicons-arrow-right-24: Empezar](issuer-portal/index.md)
 
