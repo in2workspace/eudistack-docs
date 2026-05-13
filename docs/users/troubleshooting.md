@@ -26,7 +26,7 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si el pr
 - **Causa probable**: el emisor revocó la credencial (cambio de rol, baja en la organización).
 - **Solución**: antes de contactar con el emisor, comprobar el estado actual de la credencial: abrir el detalle de la credencial en el wallet y pulsar **Verificar credencial**.
 
-    ![Pantalla de verificación de credencial](../../assets/img/users/troubleshooting/revoke.png){ width="240" }
+    ![Pantalla de verificación de credencial](../assets/img/users/troubleshooting/revoke.png){ width="240" }
 
     Si la credencial aparece como revocada, contactar con el emisor; es necesario solicitar una nueva credencial.
 
@@ -49,7 +49,7 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si el pr
     - **Email en spam**: pedir al destinatario que revise la carpeta de spam.
     - **Dirección incorrecta**: en el portal Issuer, abrir el detalle de la emisión, usar **Retirar** para cancelar y emitir una nueva credencial con la dirección correcta.
 
-        ![Credencial en estado BORRADOR con botón Retirar](../../assets/img/users/issuer-portal/withdraw.png){ width="560" }
+        ![Credencial en estado BORRADOR con botón Retirar](../assets/img/users/issuer-portal/withdraw.png){ width="560" }
 
 ## Verifier
 
