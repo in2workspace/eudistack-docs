@@ -1,21 +1,31 @@
 # Verifier API
 
-<!-- TODO: enlazar/embeber spec OpenAPI desde eudistack-core-verifier -->
-
 API para iniciar verificaciones de credenciales y validar presentaciones.
 
-## Endpoints principales
+## OpenAPI Specification
 
-| Método | Path | Descripción |
-|---|---|---|
-| POST | `/authorization-request` | Crea una solicitud de presentación OID4VP. |
-| GET | `/authorization-request/{id}` | Consulta el estado de una solicitud. |
-| POST | `/response` | Endpoint OID4VP donde el wallet entrega la presentación. |
-| GET | `/.well-known/openid-configuration` | Metadata OIDC (cuando se usa como IdP). |
+La especificación OpenAPI del Verifier se genera automáticamente desde el servicio backend (`springdoc-openapi`).
 
-<!-- TODO: spec OpenAPI inline -->
+- [Verifier API (Swagger UI)](https://sandbox-stg.eudistack.net/verifier/v3/api-docs).
+
+## Endpoints principales (integración externa)
+
+| Método | Path | Descripción                                                    |
+|--------|---|----------------------------------------------------------------|
+| POST   | `/oid4vp/auth-request/{id}` | Genera o recupera una solicitud de presentación (JWT para QR). |
+| POST   | `/oid4vp/auth-response` | Donde el Wallet envía el VP Token para verificación.           |
+| GET    | `/.well-known/openid-configuration` | Discovery OIDC del Verifier.                                   |
+| GET    | `/oauth2/jwks` | Claves públicas del Verifier para validación criptográfica.    |
 
 ## Modos de respuesta
 
 - **direct_post**: el wallet hace POST directo al Verifier con la presentación.
 - **direct_post.jwt**: respuesta cifrada con la clave del Verifier.
+
+## Notas técnicas
+- Protocolo: OpenID4VP (OID4VP).
+- OAuth2 / OIDC compatible.
+- Formatos: 
+  - JWT VP.
+  - SD-JWT VC.
+- Criptografía: ES256 (ECDSA P-256).
