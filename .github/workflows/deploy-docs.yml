@@ -36,10 +36,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose --no-progress
+            --exclude 'https://github.com/in2workspace/eudistack-core-wallet-ebw'
+            --exclude-path 'CONTEXT.md'
+            './**/*.md' './**/*.html'
+
   # ---------------------------------------------------------------------------
   # Build Job
   # ---------------------------------------------------------------------------
   build:
+    needs: lychee
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -74,11 +90,85 @@ jobs:
           path: site
 
   # ---------------------------------------------------------------------------
+  # Accessibility Audit Job
+  # ---------------------------------------------------------------------------
+  a11y:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Download built site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: site-artifact
+
+      - name: Extract site artifact
+        run: |
+          mkdir -p site
+          cd site && tar -xf ../site-artifact/artifact.tar
+          echo "Site extracted, $(find . -name '*.html' | wc -l) HTML files found"
+
+      - name: Install pa11y-ci
+        run: npm install -g pa11y-ci
+
+      - name: Serve site locally
+        run: |
+          npm install -g serve
+          serve -s site -l 8000 &
+          sleep 5
+
+      - name: Run pa11y-ci accessibility audit
+        run: |
+          pa11y-ci --config .pa11yci.json --reporter json 2>&1 | tee pa11y-results.json || true
+          echo "--- pa11y output preview ---"
+          head -c 500 pa11y-results.json
+
+      - name: Upload accessibility report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a11y-report
+          path: pa11y-results.json
+
+      - name: Fail if accessibility errors found
+        run: |
+          if [ ! -s pa11y-results.json ]; then
+            echo "pa11y-results.json está vacío o no existe"
+            exit 1
+          fi
+          if ! node -e "JSON.parse(require('fs').readFileSync('pa11y-results.json','utf8'))" 2>/dev/null; then
+            echo "El fichero no contiene JSON válido, contenido:"
+            cat pa11y-results.json
+            exit 1
+          fi
+          ERRORS=$(node -e "
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('pa11y-results.json', 'utf8'));
+            const total = Object.values(r.results).reduce((acc, page) => acc + page.length, 0);
+            console.log(total);
+          ")
+          echo "Total accessibility issues: \$ERRORS"
+          if [ "\$ERRORS" -gt "0" ]; then
+            echo "Accessibility audit failed with \$ERRORS issues."
+            exit 1
+          else
+            echo "No accessibility issues found."
+          fi
+  
+  # ---------------------------------------------------------------------------
   # Deploy Job (only on main branch)
   # ---------------------------------------------------------------------------
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
+    needs: [build, a11y]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
