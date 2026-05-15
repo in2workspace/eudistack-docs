@@ -10,8 +10,11 @@ Los formatos de credencial soportados para la verificación incluyen **jwt_vc_js
 
 La implementación soporta flujos adaptados a diferentes contextos de interacción entre el titular y la entidad verificadora:
 
-- **Cross-device (QR)** — El titular interactúa con una aplicación web en un dispositivo y utiliza el wallet en otro para escanear un código QR e iniciar la presentación.
-- **Direct Post** — Mecanismo mediante el cual el wallet envía la presentación directamente al endpoint del verificador a través de una petición HTTP POST, garantizando la privacidad y seguridad del intercambio.
+=== "Cross-device (QR)"
+    El titular interactúa con una aplicación web en un dispositivo y utiliza el wallet en otro para escanear un código QR e iniciar la presentación.
+
+=== "Direct Post"
+    Mecanismo mediante el cual el wallet envía la presentación directamente al endpoint del verificador a través de una petición HTTP POST, garantizando la privacidad y seguridad del intercambio.
 
 ---
 
@@ -49,45 +52,47 @@ sequenceDiagram
 
 ## Anatomía de una Solicitud
 
-El objeto central de OID4VP es la solicitud de presentación. A continuación se muestra un ejemplo de un objeto JSON que el wallet resuelve al iniciar el flujo para una credencial de empleado:
-```json
-{
-  "iss": "did:key:z6Mk...",
-  "aud": "https://self-issued.me/v2",
-  "iat": 1746524400,
-  "exp": 1746524700,
-  "jti": "550e8400-e29b-41d4-a716-446655440000",
-  "client_id": "did:key:z6Mk...",
-  "nonce": "a4f8c2d1-3e7b-4a9d-b5f0-1c6e2a8d4f7b",
-  "response_uri": "https://verifier.example.com/oid4vp/auth-response",
-  "scope": "openid learcredential.employee",
-  "state": "9f3b1c2a-7e4d-48a5-b0f2-3d6c8e1a5b9f",
-  "response_type": "vp_token",
-  "response_mode": "direct_post",
-  "dcql_query": {
-    "credentials": [
-      {
-        "id": "lear_employee_sd_jwt",
-        "format": "dc+sd-jwt",
-        "meta": {
-          "vct_values": ["eu.europa.ec.eudi.lce.1"]
+??? note "Ejemplo de objeto de solicitud de presentación"
+    El objeto central de OID4VP es la solicitud de presentación. A continuación se muestra un ejemplo de un objeto JSON que el wallet resuelve al iniciar el flujo para una credencial de empleado:
+
+    ```json
+    {
+      "iss": "did:key:z6Mk...",
+      "aud": "https://self-issued.me/v2",
+      "iat": 1746524400,
+      "exp": 1746524700,
+      "jti": "550e8400-e29b-41d4-a716-446655440000",
+      "client_id": "did:key:z6Mk...",
+      "nonce": "a4f8c2d1-3e7b-4a9d-b5f0-1c6e2a8d4f7b",
+      "response_uri": "https://verifier.example.com/oid4vp/auth-response",
+      "scope": "openid learcredential.employee",
+      "state": "9f3b1c2a-7e4d-48a5-b0f2-3d6c8e1a5b9f",
+      "response_type": "vp_token",
+      "response_mode": "direct_post",
+      "dcql_query": {
+        "credentials": [
+          {
+            "id": "lear_employee_sd_jwt",
+            "format": "dc+sd-jwt",
+            "meta": {
+              "vct_values": ["eu.europa.ec.eudi.lce.1"]
+            }
+          }
+        ]
+      },
+      "client_metadata": {
+        "vp_formats_supported": {
+          "dc+sd-jwt": {
+            "sd-jwt_alg_values": ["ES256"],
+            "kb-jwt_alg_values": ["ES256"]
+          },
+          "jwt_vc_json": {
+            "alg_values_supported": ["ES256"]
+          }
         }
       }
-    ]
-  },
-  "client_metadata": {
-    "vp_formats_supported": {
-      "dc+sd-jwt": {
-        "sd-jwt_alg_values": ["ES256"],
-        "kb-jwt_alg_values": ["ES256"]
-      },
-      "jwt_vc_json": {
-        "alg_values_supported": ["ES256"]
-      }
     }
-  }
-}
-```
+    ```
 
 ---
 
