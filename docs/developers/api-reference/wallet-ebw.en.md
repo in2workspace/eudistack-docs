@@ -7,7 +7,8 @@ It only applies to *Server* mode (Business Wallet); *Browser* mode (personal EUD
 
 The API is documented using OpenAPI 3.0, automatically generated:  
 
-- [Wallet API (Swagger UI)](https://sandbox-stg.eudistack.net/wallet/springdoc/swagger-ui.html).
+<!-- TODO: add a link to a functional Swagger documentation  -->
+- Wallet API (Swagger UI)
 
 ## Main Endpoints
 

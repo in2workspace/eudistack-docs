@@ -6,7 +6,8 @@ API para emitir credenciales verificables y gestionar su ciclo de vida mediante 
 
 La especificación OpenAPI del Issuer se genera automáticamente desde el servicio backend (`springdoc-openapi`).
 
-- [Issuer API (Swagger UI)](https://sandbox-stg.eudistack.net/issuer/springdoc/swagger-ui.html).
+<!-- TODO: add a link to a functional Swagger documentation  -->
+- Issuer API (Swagger UI)
 
 ## Endpoints principales 
 

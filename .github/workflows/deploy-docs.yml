@@ -47,7 +47,6 @@ jobs:
         with:
           args: >
             --verbose --no-progress
-            --exclude 'https://github.com/in2workspace/eudistack-core-wallet-ebw'
             --exclude-path 'CONTEXT.md'
             './**/*.md' './**/*.html'
 
