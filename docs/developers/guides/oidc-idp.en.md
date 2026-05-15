@@ -2,45 +2,38 @@
 
 The EUDIStack Verifier acts as a standard OIDC Identity Provider (IdP) that integrates verifiable credentials. Instead of managing usernames and passwords, your users can authenticate by presenting a verifiable credential (SD-JWT VC) from their EUDI wallet.
 
-## When to use this guide
-
-- Your application already supports OIDC (Spring Security, Auth.js, Keycloak, NextAuth, etc.)
-- You want to replace username/password authentication with verifiable credentials (eIDAS 2.0)
-- You don't want to implement OID4VP directly in your backend
+??? tip "When to use this guide"
+    - Your application already supports OIDC (Spring Security, Auth.js, Keycloak, NextAuth, etc.)
+    - You want to replace username/password authentication with verifiable credentials (eIDAS 2.0)
+    - You don't want to implement OID4VP directly in your backend
 
 ---
 
 ## Initial Setup
 
-### Discovery URL
+=== "Discovery URL"
+    The Verifier exposes a standard OpenID configuration endpoint. The domain is configured per tenant:
 
-The Verifier exposes a standard OpenID configuration endpoint. The domain is configured per tenant:
+    ```
+    https://<your-tenant>.eudistack.net/verifier/.well-known/openid-configuration
+    ```
 
-```
-https://<your-tenant>.eudistack.net/verifier/.well-known/openid-configuration
-```
+    Configure your OIDC client to use this URL. The system derives the issuer dynamically from the request domain, allowing tenant isolation by subdomain without additional configuration.
 
-Configure your OIDC client to use this URL. The system derives the issuer dynamically from the request domain, allowing tenant isolation by subdomain without additional configuration.
+=== "PKCE for public clients"
+    PKCE with the **S256** method is mandatory for public clients (SPAs, mobile applications). The **plain** method will be rejected.
 
-### PKCE for public clients
+    - Always use `code_challenge_method=S256`
+    - Include `code_challenge` in the authorization request
+    - Send the `code_verifier` when exchanging the token
 
-PKCE with the **S256** method is mandatory for public clients (SPAs, mobile applications). The **plain** method will be rejected.
-
-- Always use `code_challenge_method=S256`
-- Include `code_challenge` in the authorization request
-- Send the `code_verifier` when exchanging the token
-
-Confidential clients using `private_key_jwt` (such as Keycloak acting as a broker) are not subject to this restriction.
+    Confidential clients using `private_key_jwt` (such as Keycloak acting as a broker) are not subject to this restriction.
 
 ---
 
 ## The Authentication Flow
 
 The flow is standard OIDC Authorization Code from your application's perspective. What changes is the intermediate layer: instead of a username and password form, the Verifier orchestrates a credential presentation with the user's wallet through OID4VP.
-
-There are three parties involved in addition to your application: the Verifier, the Portal (an Angular SPA that displays the QR code), and the user's wallet.
-
-### Full Flow
 
 ```mermaid
 sequenceDiagram
@@ -70,101 +63,95 @@ sequenceDiagram
     Verifier-->>App: access_token + id_token
 ```
 
-### Step 1: Authorization Request
+=== "Step 1: Authorization Request"
+    Your application redirects the user's browser to the Authorization Endpoint, specifying what type of credential you need via the **scope** parameter. Always include **openid**:
 
-Your application redirects the user's browser to the Authorization Endpoint, specifying what type of credential you need via the **scope** parameter. Always include **openid**:
+    ```http
+    GET /verifier/oidc/authorize?
+      response_type=code&
+      client_id=my-app&
+      scope=openid learcredential.employee&
+      state=xyz789&
+      redirect_uri=https://my-app.com/callback&
+      code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-c&
+      code_challenge_method=S256
+    ```
 
-```http
-GET /verifier/oidc/authorize?
-  response_type=code&
-  client_id=my-app&
-  scope=openid learcredential.employee&
-  state=xyz789&
-  redirect_uri=https://my-app.com/callback&
-  code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-c&
-  code_challenge_method=S256
-```
+    The Verifier redirects the user to the Portal (Angular SPA), which displays the login QR code. Meanwhile, the Portal opens an SSE connection to the Verifier to receive a notification when the wallet completes the presentation.
 
-The Verifier redirects the user to the Portal (Angular SPA), which displays the login QR code. Meanwhile, the Portal opens an SSE connection to the Verifier to receive a notification when the wallet completes the presentation.
+    The Verifier translates the **learcredential.employee** scope into a DCQL query that is included in the OID4VP JWT downloaded by the wallet when it scans the QR code.
 
-The Verifier translates the **learcredential.employee** scope into a DCQL query that is included in the OID4VP JWT downloaded by the wallet when it scans the QR code.
+=== "Step 2: Token Request"
+    Once the user scans the QR code and presents the credential from their wallet, the Verifier notifies the Portal via SSE with the redirect URL containing the **code**. The Portal redirects the user's browser to your `redirect_uri`. Your backend receives the **code** and must exchange it at **/verifier/oidc/token**:
 
-### Step 2: Token Request
+    ```http
+    POST /verifier/oidc/token
+    Content-Type: application/x-www-form-urlencoded
 
-Once the user scans the QR code and presents the credential from their wallet, the Verifier notifies the Portal via SSE with the redirect URL containing the **code**. The Portal redirects the user's browser to your `redirect_uri`. Your backend receives the **code** and must exchange it at **/verifier/oidc/token**:
+    grant_type=authorization_code&
+    client_id=my-app&
+    code=SplxlOBeZQQYbYS6WxSbIA&
+    redirect_uri=https://my-app.com/callback&
+    code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+    ```
 
-```http
-POST /verifier/oidc/token
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=authorization_code&
-client_id=my-app&
-code=SplxlOBeZQQYbYS6WxSbIA&
-redirect_uri=https://my-app.com/callback&
-code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
-```
-
-You will receive an `access_token` and an `id_token` containing the data extracted from the verifiable credential.
+    You will receive an `access_token` and an `id_token` containing the data extracted from the verifiable credential.
 
 ---
 
 ## id_token Contents
 
-The Verifier extracts data from the verifiable credential and converts it into standard OIDC claims using Schema Profiles: JSON files that define the transformation rules for each credential type.
+??? note "Claims and data transformation in the identity token"
+    The Verifier extracts data from the verifiable credential and converts it into standard OIDC claims using Schema Profiles: JSON files that define the transformation rules for each credential type.
 
-### Data Transformation
+    === "Data Transformation"
+        The Verifier can extract data from the credential in several ways:
 
-The Verifier can extract data from the credential in several ways:
+        - **Direct path:** Extracts a specific field
+        - **Concatenation:** Combines multiple fields
+        - **Constant:** Adds fixed values
+        - **Full object:** Embeds entire JSON branches inside a claim
 
-- **Direct path:** Extracts a specific field
-- **Concatenation:** Combines multiple fields
-- **Constant:** Adds fixed values
-- **Full object:** Embeds entire JSON branches inside a claim
+    === "JSON Example"
+        If the user presents a **learcredential.employee** credential, the `id_token` will look like this:
 
-### Employee Credential id_token Example
+        ```json
+        {
+          "iss": "https://company.eudistack.net/verifier",
+          "sub": "john.doe@company.com",
+          "aud": "my-app",
+          "iat": 1715000000,
+          "exp": 1715000060,
+          "auth_time": 1715000000,
+          "acr": "0",
 
-If the user presents a **learcredential.employee** credential, the `id_token` will look like this:
+          "given_name": "John",
+          "family_name": "Doe",
+          "email": "john.doe@company.com",
+          "name": "John Doe",
 
-```json
-{
-  "iss": "https://company.eudistack.net/verifier",
-  "sub": "john.doe@company.com",
-  "aud": "my-app",
-  "iat": 1715000000,
-  "exp": 1715000060,
-  "auth_time": 1715000000,
-  "acr": "0",
+          "mandator": {
+            "organization": "Company Ltd.",
+            "organizationIdentifier": "VATES-12345678",
+            "country": "ES"
+          },
 
-  "given_name": "John",
-  "family_name": "Doe",
-  "email": "john.doe@company.com",
-  "name": "John Doe",
+          "credential_type": "learcredential.employee.w3c.4",
+          "vc_json": "{\"type\": [\"VerifiableCredential\", \"LEARCredentialEmployee\"], ...}"
+        }
+        ```
 
-  "mandator": {
-    "organization": "Company Ltd.",
-    "organizationIdentifier": "VATES-12345678",
-    "country": "ES"
-  },
-
-  "credential_type": "learcredential.employee.w3c.4",
-  "vc_json": "{\"type\": [\"VerifiableCredential\", \"LEARCredentialEmployee\"], ...}"
-}
-```
-
-The `vc_json` claim contains the full raw credential, useful for auditing or if you need to access fields that are not mapped into the token.
+        The `vc_json` claim contains the full raw credential, useful for auditing or if you need to access fields that are not mapped into the token.
 
 ---
 
 ## Important Considerations
 
-### Timeouts
+=== "Timeouts"
+    The login flow (from when the QR code is displayed until the user confirms in their wallet) has a default time limit of 120 seconds. If exceeded, the SSE connection expires and the user must restart the flow.
 
-The login flow (from when the QR code is displayed until the user confirms in their wallet) has a default time limit of 120 seconds. If exceeded, the SSE connection expires and the user must restart the flow.
+=== "Single-Use Codes"
+    Both the authorization **code** and the OID4VP request JWT (downloaded by the wallet when it scans the QR code) are single-use. This prevents replay attacks if someone intercepts the URL.
 
-### Single-Use Codes
-
-Both the authorization **code** and the OID4VP request JWT (downloaded by the wallet when it scans the QR code) are single-use. This prevents replay attacks if someone intercepts the URL.
-
-### Revocation Validation
-
-The revocation check occurs at the moment the wallet presents the credential (`POST /oid4vp/auth-response`), before the authorization code is issued. If the credential is revoked, the flow is cut off at that point and the Portal receives an error notification via SSE. Your application never receives a `code`.
+=== "Revocation Validation"
+    The revocation check occurs at the moment the wallet presents the credential (`POST /oid4vp/auth-response`), before the authorization code is issued. If the credential is revoked, the flow is cut off at that point and the Portal receives an error notification via SSE. Your application never receives a `code`.
