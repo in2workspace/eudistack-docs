@@ -2,7 +2,7 @@
 
 OID4VCI is the standard protocol (based on OAuth 2.0) that defines the mechanism through which an Issuer delivers a verifiable credential to a wallet. EUDIStack implements this protocol for credential issuance.
 
-The natively supported credential formats are **jwt_vc_json** and **SD-JWT VC**.
+The natively supported credential formats are **SD-JWT VC** (normative identifier: `dc+sd-jwt`) and **JWT VC** (identifier: `jwt_vc_json`).
 
 ---
 
@@ -66,14 +66,16 @@ The OID4VCI standard defines two flows for credential issuance. The EUDIStack im
 ??? note "Credential offer JSON structure"
     To initiate either of the two flows, the wallet needs to resolve an offer URL. The JSON pointed to by this URL has the following structure:
 
+    > **Note:** The value of `credential_configuration_ids` (e.g., `learcredential.employee.sd.1`) is the configuration identifier defined by the Issuer in its metadata (`/.well-known/openid-credential-issuer`). This identifier is specific to each deployment and credential type; consult your Issuer's metadata for the exact values.
+
     === "Pre-Authorized Offer"
         The Issuer emits the offer directly with a pre-authorized code. The `tx_code` field indicates that a 6-digit transaction code sent to the holder's email will be required:
 
         ```json
         {
-          "credential_issuer": "https://issuer.sandbox.eudistack.net",
+          "credential_issuer": "https://sandbox-stg.eudistack.net/issuer",
           "credential_configuration_ids": [
-            "learcredential.employee.w3c.4"
+            "learcredential.employee.sd.1"
           ],
           "grants": {
             "urn:ietf:params:oauth:grant-type:pre-authorized_code": {
@@ -93,9 +95,9 @@ The OID4VCI standard defines two flows for credential issuance. The EUDIStack im
 
         ```json
         {
-          "credential_issuer": "https://issuer.sandbox.eudistack.net",
+          "credential_issuer": "https://sandbox-stg.eudistack.net/issuer",
           "credential_configuration_ids": [
-            "learcredential.employee.w3c.4"
+            "learcredential.employee.sd.1"
           ],
           "grants": {
             "authorization_code": {

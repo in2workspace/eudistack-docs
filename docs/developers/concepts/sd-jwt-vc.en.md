@@ -2,7 +2,7 @@
 
 SD-JWT VC (*Selective Disclosure JSON Web Token Verifiable Credential*) is one of the verifiable credential formats supported by the EUDIStack implementation. Based on [RFC 9901](https://datatracker.ietf.org/doc/rfc9901/), this format allows for the selective disclosure of attributes, ensuring that the holder only shares the necessary data in each verification process.
 
-The implementation uses the format identifier dc+sd-jwt and supports signatures using JAdES to ensure integrity and non-repudiation.
+The implementation uses the format identifier `dc+sd-jwt` and signs credentials using **standard JWS with the ES256 algorithm**.
 
 ---
 

@@ -45,5 +45,5 @@ internal SDD docs (which live in `eudistack-platform-dev/docs/`).
 
 ## References
 
-- Constitution: [`../eudistack-platform-dev/CLAUDE.md`](../eudistack-platform-dev/CLAUDE.md)
+- Constitution: `../eudistack-platform-dev/CLAUDE.md` (internal repo, not publicly linked)
 - Figma page **10 Knowledge Base**.
