@@ -14,18 +14,17 @@ internal SDD docs (which live in `eudistack-platform-dev/docs/`).
 
 ## Tech stack
 
-Likely Markdown-based static site (MkDocs / Docusaurus / VitePress —
-check `package.json` or `mkdocs.yml`).
+- **MkDocs** (Material theme via `overrides/`) — config in `mkdocs.yml`, deps in `requirements.txt`.
+- Custom domain via `CNAME`. Generated site committed under `site/`.
 
 ## Common commands
 
-> Check the repo's actual build tool. Patterns by stack:
-
-| Stack | Dev server | Build |
-|-------|------------|-------|
-| MkDocs | `mkdocs serve` | `mkdocs build` |
-| Docusaurus | `npm start` | `npm run build` |
-| VitePress | `npm run docs:dev` | `npm run docs:build` |
+| Task | Command |
+|------|---------|
+| Install deps | `pip install -r requirements.txt` |
+| Dev server | `mkdocs serve` |
+| Build | `mkdocs build` |
+| Deploy (GitHub Pages) | `mkdocs gh-deploy` |
 
 ## Conventions
 
