@@ -38,7 +38,7 @@ Consultar y operar sobre credenciales ya emitidas.
     El estado de cada emisión es visible tanto en la tabla del listado como en la pantalla de detalle de la credencial. Cada estado determina qué acciones están disponibles; consultar el apartado [Acciones](#acciones) para más información.
 
     - ![Estado DRAFT](../../assets/img/admin/issuer-portal/draft.png){ width="120" style="vertical-align: middle;" }: oferta enviada, todavía no aceptada por el destinatario.
-    - **EMITIDO**: el destinatario ha aceptado la credencial pero todavía no ha empezado su periodo de validez.
+    - ![Estado EMITIDO](../../assets/img/admin/issuer-portal/issued.png){ width="120" style="vertical-align: middle;" }: el destinatario ha aceptado la credencial pero todavía no ha empezado su periodo de validez.
     - ![Estado WITHDRAWN](../../assets/img/admin/issuer-portal/withdrawn.png){ width="120" style="vertical-align: middle;" }: el emisor ha cancelado la oferta antes de que el destinatario la aceptara.
     - ![Estado VALID](../../assets/img/admin/issuer-portal/valid.png){ width="120" style="vertical-align: middle;" }: el destinatario ha aceptado la credencial y está en su wallet en periodo de validez.
     - ![Estado REVOKED](../../assets/img/admin/issuer-portal/revoked.png){ width="120" style="vertical-align: middle;" }: el emisor ha revocado la credencial explícitamente; deja de ser válida aunque no haya alcanzado su fecha de caducidad.
