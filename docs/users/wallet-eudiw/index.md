@@ -1,11 +1,8 @@
 # Wallet — EUDIW
 
-EUDIW (European Digital Identity Wallet) es la versión **personal** del wallet de EUDIStack. Las claves criptográficas y las credenciales se generan y almacenan **en el dispositivo** (modo *Browser*), protegidas con passkey/biometría.
+**EUDIW** (European Digital Identity Wallet) es el **wallet personal** de EUDIStack. Tus credenciales de identidad digital se guardan en tu propio dispositivo y solo tú puedes acceder a ellas mediante huella dactilar, reconocimiento facial o PIN.
 
-!!! tip "¿Cómo sé que estoy en EUDIW?"
-    Abrir **Ajustes**. En el campo **Tipo de wallet** aparece el modo activo: `EUDIW` corresponde al wallet personal y `Business Wallet` al organizacional.
-    
-    ![Campo Tipo de wallet en Ajustes](../../assets/img/users/wallet-eudiw/type-wallet.png){ width="320" }
+---
 
 ## En esta sección
 
@@ -30,5 +27,9 @@ EUDIW (European Digital Identity Wallet) es la versión **personal** del wallet 
 -   :material-folder-account: [**Gestionar credenciales**](manage-credentials.md)
 
     Ver y eliminar credenciales del wallet.
+
+-   :material-cog: [**Ajustes**](settings.md)
+
+    Personalizar la apariencia, el idioma y consultar el historial de actividad.
 
 </div>

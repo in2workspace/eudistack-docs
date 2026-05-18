@@ -1,6 +1,25 @@
 # Guías de usuario
 
-Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en tu día a día. Elige la herramienta que vas a usar:
+Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en tu día a día.
+
+---
+
+## Tipo de wallet
+
+??? info "¿Cómo sé qué tipo de wallet estoy usando?"
+    Abre **Ajustes**. El campo **Tipo de wallet** indica el modo activo.
+
+    `EUDIW`:
+
+    ![Campo Tipo de wallet en Ajustes mostrando EUDIW](../../assets/img/users/type-wallet-eudiw.png){ width="320" }
+
+    `Business Wallet`:
+
+    ![Campo Tipo de wallet en Ajustes mostrando Business Wallet](../../assets/img/users/type-wallet-buisiness.png){ width="320" }
+
+---
+
+## Herramientas disponibles
 
 <div class="grid cards" markdown>
 
