@@ -123,7 +123,7 @@ sequenceDiagram
           "iat": 1715000000,
           "exp": 1715000060,
           "auth_time": 1715000000,
-          "acr": "0",
+          "acr": "http://eidas.europa.eu/LoA/substantial",
 
           "given_name": "John",
           "family_name": "Doe",
@@ -142,6 +142,16 @@ sequenceDiagram
         ```
 
         The `vc_json` claim contains the full raw credential, useful for auditing or if you need to access fields that are not mapped into the token.
+
+        > **ACR values and eIDAS 2.0:** The `acr` claim indicates the Level of Assurance (LoA) with which the user authenticated. EUDIStack uses the URIs defined in the eIDAS 2.0 Regulation:
+        >
+        > | `acr` value | Level of Assurance |
+        > |---|---|
+        > | `http://eidas.europa.eu/LoA/low` | Low |
+        > | `http://eidas.europa.eu/LoA/substantial` | Substantial (default value with EUDI Wallet) |
+        > | `http://eidas.europa.eu/LoA/high` | High |
+        >
+        > The effective level depends on the type of credential presented and the Verifier configuration. The numeric value `"0"` is not emitted in production; that value would indicate no level of assurance and is not valid in eIDAS contexts.
 
 ---
 

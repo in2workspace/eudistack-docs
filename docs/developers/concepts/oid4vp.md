@@ -2,7 +2,7 @@
 
 OID4VP es el protocolo estándar que define cómo un Verificador solicita y recibe presentaciones de credenciales verificables desde un wallet. La implementación de EUDIStack actúa como el componente verificador, permitiendo a aplicaciones de terceros consumir datos de identidad de forma segura y estandarizada.
 
-Los formatos de credencial soportados para la verificación incluyen **jwt_vc_json** y **SD-JWT VC**.
+Los formatos de credencial soportados para la verificación incluyen **SD-JWT VC** (identificador normativo: `dc+sd-jwt`) y **JWT VC** (identificador: `jwt_vc_json`).
 
 ---
 
@@ -13,8 +13,24 @@ La implementación soporta flujos adaptados a diferentes contextos de interacci�
 === "Cross-device (QR)"
     El titular interactúa con una aplicación web en un dispositivo y utiliza el wallet en otro para escanear un código QR e iniciar la presentación.
 
+    **Pasos del flujo:**
+
+    1. La aplicación cliente solicita al Verifier la creación de una sesión de presentación.
+    2. El Verifier retorna un `session_id` y la URL de la solicitud de autorización (codificada como QR o deep link).
+    3. La aplicación muestra el QR al usuario en la pantalla del dispositivo web.
+    4. El usuario escanea el QR con su wallet EUDI en un segundo dispositivo.
+    5. El wallet descarga el JWT de la solicitud (`GET /oid4vp/auth-request/{id}`) y presenta los claims seleccionados (`POST /oid4vp/auth-response`).
+    6. El Verifier valida la presentación y notifica a la aplicación vía SSE con el resultado.
+
 === "Direct Post"
     Mecanismo mediante el cual el wallet envía la presentación directamente al endpoint del verificador a través de una petición HTTP POST, garantizando la privacidad y seguridad del intercambio.
+
+    **Funcionamiento:**
+
+    - El parámetro `response_mode=direct_post` en el JWT de la solicitud indica al wallet que debe enviar el `vp_token` directamente al `response_uri` del Verifier, en lugar de incluirlo en la URL de redirección.
+    - El wallet construye el VP Token (cadena SD-JWT con los disclosures seleccionados y el Key Binding JWT) y lo envía mediante `POST` al endpoint `response_uri`.
+    - El Verifier verifica las firmas, la vinculación de clave y el estado de revocación antes de emitir la notificación a la aplicación cliente.
+    - Este modo es el utilizado por defecto en EUDIStack tanto en flujos cross-device como same-device.
 
 ---
 
@@ -54,6 +70,8 @@ sequenceDiagram
 
 ??? note "Ejemplo de objeto de solicitud de presentación"
     El objeto central de OID4VP es la solicitud de presentación. A continuación se muestra un ejemplo de un objeto JSON que el wallet resuelve al iniciar el flujo para una credencial de empleado:
+
+    > **Nota sobre identificadores:** El campo `vct_values` dentro de la consulta DCQL contiene el tipo de credencial verificable (VC Type), definido en el campo `vct` de la credencial emitida (p. ej., `eu.europa.ec.eudi.lce.1`). Este valor es distinto del `credential_configuration_id` presente en la oferta de emisión (OID4VCI), que es el identificador de la configuración en los metadatos del Issuer.
 
     ```json
     {
@@ -99,5 +117,5 @@ sequenceDiagram
 ## Referencias
 
 * **Especificación Oficial:** [OID4VP 1.0](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html)
-* **Consulta de Credenciales:** [Digital Credential Query Language (DCQL)](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html#section-dcql)
+* **Consulta de Credenciales:** [Digital Credential Query Language (DCQL)](https://openid.net/specs/openid-4-verifiable-credential-query-language-1_0.html)
 * **Referencia API:** [Endpoints del Verificador](../api-reference/verifier.md)

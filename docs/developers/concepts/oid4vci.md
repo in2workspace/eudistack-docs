@@ -2,7 +2,7 @@
 
 OID4VCI es el protocolo estándar (basado en OAuth 2.0) que define el mecanismo mediante el cual un Issuer entrega una credencial verificable a un wallet. EUDIStack implementa este protocolo para la emisión de credenciales.
 
-Los formatos de credencial soportados de forma nativa son **jwt_vc_json** y **SD-JWT VC**.
+Los formatos de credencial soportados de forma nativa son **SD-JWT VC** (identificador normativo: `dc+sd-jwt`) y **JWT VC** (identificador: `jwt_vc_json`).
 
 ---
 
@@ -66,14 +66,16 @@ El estándar OID4VCI define dos flujos para la emisión de credenciales. La impl
 ??? note "Estructura JSON de la oferta de credencial"
     Para iniciar cualquiera de los dos flujos, el wallet necesita resolver una URL de oferta. El JSON al que apunta dicha URL tiene la siguiente estructura:
 
+    > **Nota:** El valor de `credential_configuration_ids` (p. ej., `learcredential.employee.sd.1`) es el identificador de configuración definido por el Issuer en sus metadatos (`/.well-known/openid-credential-issuer`). Este identificador es específico de cada despliegue y tipo de credencial; consulta los metadatos de tu Issuer para obtener los valores exactos.
+
     === "Pre-Authorized Offer"
         El Issuer emite la oferta directamente con un código preautorizado. El campo `tx_code` indica que se requerirá un código de transacción de 6 dígitos enviado al email del titular:
 
         ```json
         {
-          "credential_issuer": "https://issuer.sandbox.eudistack.net",
+          "credential_issuer": "https://sandbox-stg.eudistack.net/issuer",
           "credential_configuration_ids": [
-            "learcredential.employee.w3c.4"
+            "learcredential.employee.sd.1"
           ],
           "grants": {
             "urn:ietf:params:oauth:grant-type:pre-authorized_code": {
@@ -93,9 +95,9 @@ El estándar OID4VCI define dos flujos para la emisión de credenciales. La impl
 
         ```json
         {
-          "credential_issuer": "https://issuer.sandbox.eudistack.net",
+          "credential_issuer": "https://sandbox-stg.eudistack.net/issuer",
           "credential_configuration_ids": [
-            "learcredential.employee.w3c.4"
+            "learcredential.employee.sd.1"
           ],
           "grants": {
             "authorization_code": {

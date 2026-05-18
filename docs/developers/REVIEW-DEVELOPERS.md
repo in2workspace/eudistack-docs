@@ -18,7 +18,7 @@ El paso "Abrir la Credential Offer" tiene dos puntos numerados como `4.` (línea
 
 El tutorial usa `GET /verifier/oid4vp/auth-request/{id}` para el polling de resultado, pero la referencia API declara ese mismo endpoint como `POST`. Uno de los dos está mal.
 
-### 4. `sd-jwt-vc.md` — Afirmación técnica incorrecta sobre JAdES
+### 4.SOLVED `sd-jwt-vc.md` — Afirmación técnica incorrecta sobre JAdES
 
 La página dice que "soporta firmas mediante JAdES". JAdES (ETSI EN 319 132) es un estándar de firma diferente de JWS/ES256. SD-JWT VC usa JWS estándar con ES256, no JAdES. Esta afirmación mezcla conceptos y puede inducir a error a los integradores.
 
@@ -84,7 +84,7 @@ Los siguientes archivos tienen placeholders visibles que no deberían estar en u
 
 `troubleshooting.md` referencia este endpoint como causa de fallos de validación del wallet, pero no está listado en la tabla de well-known endpoints de `api-reference/issuer.md`.
 
-### 13. `oid4vp.md` — Tabs sin contenido
+### 13.SOLVED `oid4vp.md` — Tabs sin contenido
 
 Las pestañas "Cross-device (QR)" y "Direct Post" tienen título pero el cuerpo está vacío. No aportan información al lector.
 
@@ -96,7 +96,7 @@ Es la guía más usada en automatizaciones backend y apenas tiene contenido. Le 
 
 ## Issues menores / estilo
 
-### 15. Identificadores de formato de credencial inconsistentes
+### 15.SOLVED Identificadores de formato de credencial inconsistentes
 
 La documentación mezcla tres formas diferentes para referirse al mismo formato:
 
@@ -122,7 +122,7 @@ Si son formatos o versiones diferentes, debería explicarse la diferencia; si no
 
 "Opción B:" no tiene nombre. Debería ser "Opción B: Polling" o similar.
 
-### 18. `oid4vp.md` — Referencia DCQL apunta al spec OID4VP, no al spec DCQL
+### 18.SOLVED `oid4vp.md` — Referencia DCQL apunta al spec OID4VP, no al spec DCQL
 
 El link `[Digital Credential Query Language (DCQL)]` apunta a un fragmento de la spec OID4VP. DCQL tiene su propia especificación: `openid-4-verifiable-credential-query-language-1_0`.
 
@@ -130,7 +130,7 @@ El link `[Digital Credential Query Language (DCQL)]` apunta a un fragmento de la
 
 El link al Swagger UI apunta directamente a `https://sandbox-stg.eudistack.net/verifier/v3/api-docs`. Si el entorno STG no está levantado, el link está roto. Sería preferible una URL estable o añadir una nota de que requiere el entorno activo.
 
-### 20. `oidc-idp.md` — Valor `acr: "0"` en el id_token de ejemplo
+### 20.SOLVED `oidc-idp.md` — Valor `acr: "0"` en el id_token de ejemplo
 
 El claim `acr` en el ejemplo tiene valor `"0"`, que en el contexto OIDC/eIDAS suele indicar "sin nivel de confianza". Debería documentarse qué valores ACR emite EUDIStack y qué significan, especialmente porque eIDAS 2.0 usa LoA (substantial/high).
 
