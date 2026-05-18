@@ -117,5 +117,5 @@ sequenceDiagram
 ## Referencias
 
 * **Especificación Oficial:** [OID4VP 1.0](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html)
-* **Consulta de Credenciales:** [Digital Credential Query Language (DCQL)](https://openid.net/specs/openid-4-verifiable-credential-query-language-1_0.html)
+* **Consulta de Credenciales:** [Digital Credential Query Language (DCQL)](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html#name-digital-credentials-query-l)
 * **Referencia API:** [Endpoints del Verificador](../api-reference/verifier.md)
