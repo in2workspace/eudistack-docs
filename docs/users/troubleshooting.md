@@ -11,7 +11,7 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si el pr
 - **Solución**: solicitar una nueva oferta al emisor; verificar que el wallet pertenece al mismo tenant que el emisor (mismo dominio).
 
     !!! note "Páginas relacionadas"
-        - [Emitir una credencial](issuer-portal/issue-credential.md) — cómo el emisor genera una nueva oferta
+        - [Emitir una credencial](../admin/issuer-portal/issue-credential.md) — cómo el emisor genera una nueva oferta
         - [Recibir credenciales](wallet-eudiw/receive-credentials.md) — cómo aceptar la nueva oferta desde el wallet
 
 ### Error al crear el passkey
@@ -32,24 +32,6 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si el pr
 
     !!! note "Páginas relacionadas"
         - [Gestionar credenciales](wallet-eudiw/manage-credentials.md) — cómo verificar y gestionar el estado de las credenciales en el wallet
-
-## Portal Issuer
-
-### Error al iniciar sesión
-
-- **Síntoma**: el login con credencial verificable falla.
-- **Causa probable**:  credencial corporativa ha caducado o ha sido revocada.
-- **Solución**: contactar con el administrador de la organización para que emita una nueva.
-
-### El destinatario no recibe la oferta
-
-- **Síntoma**: la credencial se emite pero el destinatario no la recibe.
-- **Causa probable**: email filtrado como spam o dirección de correo incorrecta.
-- **Solución**:
-    - **Email en spam**: pedir al destinatario que revise la carpeta de spam.
-    - **Dirección incorrecta**: en el portal Issuer, abrir el detalle de la emisión, usar **Retirar** para cancelar y emitir una nueva credencial con la dirección correcta.
-
-        ![Credencial en estado BORRADOR con botón Retirar](../assets/img/users/issuer-portal/withdraw.png){ width="560" }
 
 ## Verifier
 

@@ -39,14 +39,6 @@ Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en
 
     [:octicons-arrow-right-24: Empezar](wallet-business/index.md)
 
--   :material-certificate: **Portal Issuer**
-
-    ---
-
-    Emite credenciales verificables a los usuarios desde la consola web.
-
-    [:octicons-arrow-right-24: Empezar](issuer-portal/index.md)
-
 </div>
 
 ---
