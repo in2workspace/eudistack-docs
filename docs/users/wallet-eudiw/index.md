@@ -18,7 +18,7 @@
 
 -   :material-share: [**Presentar credenciales**](present-credentials.md)
 
-    Cómo compartir credenciales con un [Verifier](../verifier/index.md) de forma selectiva.
+    Cómo compartir credenciales con un Verifier de forma selectiva.
 
     <small>Un Verifier es un servicio o portal que solicita y valida credenciales, por ejemplo,
     para verificar la identidad de un usuario, permitirle iniciar sesión o acreditar

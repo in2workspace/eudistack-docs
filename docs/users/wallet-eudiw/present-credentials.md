@@ -11,11 +11,11 @@ Un Verifier es un servicio o portal que solicita y valida credenciales, por ejem
 
     **Ejemplo 1:**
 
-    ![Pantalla del Verifier — verificación remota](../../assets/img/users/verifire/remote.png){ width="240" }
+    ![Pantalla del Verifier — verificación remota](../../assets/img/users/wallet-eudiw/remote.png){ width="240" }
 
     **Ejemplo 2:**
 
-    ![Pantalla del Verifier — verificación de proximidad](../../assets/img/users/verifire/proximity.png){ width="480" }
+    ![Pantalla del Verifier — verificación de proximidad](../../assets/img/users/wallet-eudiw/proximity.png){ width="480" }
 
 ??? "2. Escanear el QR con el wallet o usar URL"
     Pulsar la pestaña *Escaneo QR* en la barra de navegación inferior.

@@ -213,10 +213,6 @@ nav:
           - users/issuer-portal/index.md
           - Emitir una credencial: users/issuer-portal/issue-credential.md
           - Gestionar emisiones: users/issuer-portal/manage-issuances.md
-      - Verifier:
-          - users/verifier/index.md
-          - Verificación remota: users/verifier/remote-verification.md
-          - Verificación presencial: users/verifier/proximity-verification.md
       - Solución de problemas: users/troubleshooting.md
 
   - Developers:

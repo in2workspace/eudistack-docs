@@ -47,14 +47,6 @@ Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en
 
     [:octicons-arrow-right-24: Empezar](issuer-portal/index.md)
 
--   :material-shield-check: **Verifier**
-
-    ---
-
-    Verifica credenciales presentadas por usuarios, en remoto o presencialmente.
-
-    [:octicons-arrow-right-24: Empezar](verifier/index.md)
-
 </div>
 
 ---
