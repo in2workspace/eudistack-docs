@@ -19,7 +19,7 @@ The implementation supports flows adapted to different interaction contexts betw
     2. The Verifier returns a `session_id` and the authorization request URL (encoded as a QR code or deep link).
     3. The application displays the QR code to the user on the web device screen.
     4. The user scans the QR code with their EUDI wallet on a second device.
-    5. The wallet downloads the request JWT (`GET /oid4vp/auth-request/{id}`) and submits the selected claims (`POST /oid4vp/auth-response`).
+    5. The wallet downloads the request JWT (`POST /oid4vp/auth-request/{id}`) and submits the selected claims (`POST /oid4vp/auth-response`).
     6. The Verifier validates the presentation and notifies the application via SSE with the result.
 
 === "Direct Post"
