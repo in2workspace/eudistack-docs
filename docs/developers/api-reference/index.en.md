@@ -1,6 +1,6 @@
 # API Reference
 
-EUDIStack's public APIs are organized by service. Each one is exposed via OpenAPI 3.0, with a Swagger UI accessible when the sandbox environment is active (see the link on each service page).
+EUDIStack's public APIs are organized by service. Each is exposed via OpenAPI 3.0; on each service page you'll find links to its documentation and OpenAPI specification available per environment.
 
 <div class="grid cards" markdown>
 

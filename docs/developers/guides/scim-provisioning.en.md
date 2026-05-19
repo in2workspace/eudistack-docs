@@ -75,58 +75,58 @@ SCIM requests must include **bearer token** authentication.
 
 === "Create user"
 
-        ```http
-        POST /scim/v2/Users
-        Authorization: Bearer <token>
-        Content-Type: application/scim+json
-        ```
+    ```http
+    POST /scim/v2/Users
+    Authorization: Bearer <token>
+    Content-Type: application/scim+json
+    ```
 
-        ```json
-        {
-          "userName": "ana.garcia",
-          "active": true,
-          "name": {
-            "givenName": "Ana",
-            "familyName": "Garcia"
-          },
-          "emails": [
-            { "primary": true, "value": "ana.garcia@example.com" }
-          ]
-        }
-        ```
+    ```json
+    {
+      "userName": "ana.garcia",
+      "active": true,
+      "name": {
+        "givenName": "Ana",
+        "familyName": "Garcia"
+      },
+      "emails": [
+        { "primary": true, "value": "ana.garcia@example.com" }
+      ]
+    }
+    ```
 
     **Result:** user provisioned → automatic credential issuance triggered → delivery executed per tenant configuration → audit event registered.
 
 === "Update user"
 
-        ```http
-        PUT /scim/v2/Users/2819c223-7f76-453a-919d-413861904646
-        Authorization: Bearer <token>
-        Content-Type: application/scim+json
-        ```
+    ```http
+    PUT /scim/v2/Users/2819c223-7f76-453a-919d-413861904646
+    Authorization: Bearer <token>
+    Content-Type: application/scim+json
+    ```
 
-        ```json
-        {
-          "userName": "ana.garcia",
-          "active": true,
-          "name": {
-            "givenName": "Ana",
-            "familyName": "Garcia"
-          },
-          "emails": [
-            { "primary": true, "value": "ana.garcia@new-domain.example" }
-          ]
-        }
-        ```
+    ```json
+    {
+      "userName": "ana.garcia",
+      "active": true,
+      "name": {
+        "givenName": "Ana",
+        "familyName": "Garcia"
+      },
+      "emails": [
+        { "primary": true, "value": "ana.garcia@new-domain.example" }
+      ]
+    }
+    ```
 
     **Result:** previous credential revoked → new credential issued with updated attributes → audit event registered.
 
 === "Delete user"
 
-        ```http
-        DELETE /scim/v2/Users/2819c223-7f76-453a-919d-413861904646
-        Authorization: Bearer <token>
-        ```
+    ```http
+    DELETE /scim/v2/Users/2819c223-7f76-453a-919d-413861904646
+    Authorization: Bearer <token>
+    ```
 
     **Result:** active credential revoked → Status List updated automatically → audit event registered.
 

@@ -114,10 +114,13 @@ Una vez validado:
 
     ```json
     {
-      "request_uri": "openid://verifier/request/abc123",
+      "session_id": "abc123",
+      "request_uri": "openid-vp://verifier/request/abc123",
       "expires_in": 120
     }
     ```
+
+    > **Nota:** el valor de `session_id` es el `{id}` que se usa en la **Opción B: Polling** (`GET /verifier/oid4vp/auth-request/{id}`).
 
 Abre el Wallet:
 

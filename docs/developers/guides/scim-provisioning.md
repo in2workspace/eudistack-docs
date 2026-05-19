@@ -77,58 +77,58 @@ Las peticiones SCIM deben autenticarse mediante **bearer token**.
 
 === "Crear usuario"
 
-        ```http
-        POST /scim/v2/Users
-        Authorization: Bearer <token>
-        Content-Type: application/scim+json
-        ```
+    ```http
+    POST /scim/v2/Users
+    Authorization: Bearer <token>
+    Content-Type: application/scim+json
+    ```
 
-        ```json
-        {
-          "userName": "ana.garcia",
-          "active": true,
-          "name": {
-            "givenName": "Ana",
-            "familyName": "Garcia"
-          },
-          "emails": [
-            { "primary": true, "value": "ana.garcia@example.com" }
-          ]
-        }
-        ```
+    ```json
+    {
+      "userName": "ana.garcia",
+      "active": true,
+      "name": {
+        "givenName": "Ana",
+        "familyName": "Garcia"
+      },
+      "emails": [
+        { "primary": true, "value": "ana.garcia@example.com" }
+      ]
+    }
+    ```
 
     **Resultado:** usuario provisionado → emisión automática de credencial → entrega según configuración del tenant → evento de auditoría registrado.
 
 === "Actualizar usuario"
 
-        ```http
-        PUT /scim/v2/Users/2819c223-7f76-453a-919d-413861904646
-        Authorization: Bearer <token>
-        Content-Type: application/scim+json
-        ```
+    ```http
+    PUT /scim/v2/Users/2819c223-7f76-453a-919d-413861904646
+    Authorization: Bearer <token>
+    Content-Type: application/scim+json
+    ```
 
-        ```json
-        {
-          "userName": "ana.garcia",
-          "active": true,
-          "name": {
-            "givenName": "Ana",
-            "familyName": "Garcia"
-          },
-          "emails": [
-            { "primary": true, "value": "ana.garcia@new-domain.example" }
-          ]
-        }
-        ```
+    ```json
+    {
+      "userName": "ana.garcia",
+      "active": true,
+      "name": {
+        "givenName": "Ana",
+        "familyName": "Garcia"
+      },
+      "emails": [
+        { "primary": true, "value": "ana.garcia@new-domain.example" }
+      ]
+    }
+    ```
 
     **Resultado:** credencial anterior revocada → nueva credencial emitida con atributos actualizados → evento de auditoría registrado.
 
 === "Eliminar usuario"
 
-        ```http
-        DELETE /scim/v2/Users/2819c223-7f76-453a-919d-413861904646
-        Authorization: Bearer <token>
-        ```
+    ```http
+    DELETE /scim/v2/Users/2819c223-7f76-453a-919d-413861904646
+    Authorization: Bearer <token>
+    ```
 
     **Resultado:** credencial activa revocada → Status List actualizada automáticamente → evento de auditoría registrado.
 
