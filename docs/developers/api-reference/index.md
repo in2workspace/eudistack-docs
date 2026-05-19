@@ -1,6 +1,6 @@
 # Referencia API
 
-Las APIs públicas de EUDIStack están organizadas por servicio. Cada una se expone vía OpenAPI 3.0 y dispone de un Swagger UI accesible cuando el entorno está activo (ver enlace en cada página de servicio).
+Las APIs públicas de EUDIStack están organizadas por servicio. Cada una se expone vía OpenAPI 3.0; en cada página de servicio encontrarás los enlaces a su documentación y especificación OpenAPI disponibles según el entorno.
 
 <div class="grid cards" markdown>
 
