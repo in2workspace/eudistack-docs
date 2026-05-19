@@ -16,7 +16,7 @@ Welcome. This section explains how to use EUDIStack applications in your day-to-
 
     ---
 
-    The **organisational** wallet (EBW). Keys are held server-side with strong authentication. Designed for employees of organisations.
+    The **organisational** wallet (EBW). Cryptographic keys are generated and kept on your device with the passkey. Designed for employees of organisations.
 
     [:octicons-arrow-right-24: Get started](wallet-business/index.en.md)
 
