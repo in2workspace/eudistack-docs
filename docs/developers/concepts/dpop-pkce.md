@@ -55,7 +55,7 @@ EUDIStack exige PKCE en todos los flujos Authorization Code, incluidos clientes 
 === "Token Exchange"
 
     ```http
-    POST /oid4vci/v1/token HTTP/1.1
+    POST /issuer/oid4vci/v1/token HTTP/1.1
     Host: sandbox-stg.eudistack.net
     Content-Type: application/x-www-form-urlencoded
 
