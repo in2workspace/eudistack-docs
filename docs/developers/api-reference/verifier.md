@@ -5,7 +5,7 @@ API para iniciar verificaciones de credenciales y validar presentaciones.
 ??? info "Especificación OpenAPI"
     La especificación OpenAPI del Verifier se genera automáticamente desde el servicio backend (`springdoc-openapi`).
 
-    - [Verifier API (Swagger UI)](https://sandbox-stg.eudistack.net/verifier/v3/api-docs) *(requiere el entorno sandbox activo)*.
+    - [Verifier API (OpenAPI spec)](https://sandbox-stg.eudistack.net/verifier/v3/api-docs) *(requiere el entorno sandbox activo)*.
 
 ---
 

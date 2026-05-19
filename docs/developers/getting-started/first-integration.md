@@ -150,11 +150,11 @@ Existen dos formas de obtener el resultado.
 
 === "Opción B: Polling"
 
-    Consulta el estado de la verificación por ID de sesión:
+    Consulta el estado de la verificación por ID de sesión usando el endpoint de estado/resultado de verificación documentado en la referencia del Verifier.
 
-    ```http
-    GET https://sandbox-stg.eudistack.net/verifier/oid4vp/auth-request/{id}
-    ```
+    No uses `GET /verifier/oid4vp/auth-request/{id}` para este paso: ese endpoint se utiliza para recuperar la presentation request JWT del Wallet, no para consultar el resultado de la verificación.
+
+    La respuesta de polling tendrá un formato similar a este:
 
     ```json
     {
