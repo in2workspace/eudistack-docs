@@ -2,15 +2,6 @@
 
 The **European Business Wallet (EBW)** is the corporate user version of the wallet. Unlike the personal EUDIW, credentials are stored on the organisation's server and are accessible from multiple registered devices. Cryptographic keys are generated on the device using the passkey (biometrics or PIN) and never leave it.
 
-!!! tip "How to identify the Business Wallet"
-    In **Settings**, the **Wallet type** field shows the active mode: `Business Wallet`.
-
-    ![Wallet type field in Settings](../../assets/img/users/wallet-buisiness/type-wallet.png){ width="320" }
-
-    Additionally, a **My Devices** section appears in Settings, which does not exist in the personal EUDIW.
-
-    ![My Devices section in Settings](../../assets/img/users/wallet-buisiness/devices.png){ width="320" }
-
 ## Key differences from EUDIW
 
 | Feature | EUDIW (personal) | Business Wallet |
@@ -28,13 +19,24 @@ The **European Business Wallet (EBW)** is the corporate user version of the wall
 
     Activate the account, verify the corporate email and create the passkey on the first device.
 
+-   :material-download: [**Receive credentials**](receive-credentials.md)
+
+    How to accept a credential issued by an Issuer.
+
+-   :material-share: [**Present credentials**](present-credentials.md)
+
+    How to share credentials with a Verifier selectively.
+
+-   :material-folder-account: [**Manage credentials**](manage-credentials.md)
+
+    View and delete credentials from the wallet.
+
+-   :material-cog: [**Settings**](settings.md)
+
+    Customise the appearance, language and view the activity history.
+
 -   :material-key-chain: [**Devices and keys**](devices.md)
 
     Manage the authorised devices from which you can operate.
 
--   :material-briefcase-clock: [**Daily operations**](daily-operations.md)
-
-    Receive and present credentials on behalf of the organisation.
-
 </div>
-

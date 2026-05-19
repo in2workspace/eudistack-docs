@@ -1,6 +1,25 @@
 # User Guides
 
-Welcome. This section explains how to use EUDIStack applications in your day-to-day work. Choose the tool you are going to use:
+Welcome. This section explains how to use EUDIStack applications in your day-to-day work.
+
+---
+
+## Wallet type
+
+??? info "How do I know which type of wallet I am using?"
+    Open **[Settings](wallet-eudiw/settings.md)**. The **[Wallet type](wallet-eudiw/settings.md#walletType)** field shows the active mode.
+
+    `EUDIW`:
+
+    ![Wallet type field in Settings showing EUDIW](../../assets/img/users/type-wallet-eudiw.png){ width="320" }
+
+    `Business Wallet`:
+
+    ![Wallet type field in Settings showing Business Wallet](../../assets/img/users/type-wallet-buisiness.png){ width="320" }
+
+---
+
+## Available tools
 
 <div class="grid cards" markdown>
 
@@ -16,25 +35,9 @@ Welcome. This section explains how to use EUDIStack applications in your day-to-
 
     ---
 
-    The **organisational** wallet (EBW). Cryptographic keys are generated and kept on your device with the passkey. Designed for employees of organisations.
+    The **organisational** wallet (EBW). Keys are held on the server with enhanced authentication. Designed for employees of organisations.
 
     [:octicons-arrow-right-24: Get started](wallet-business/index.en.md)
-
--   :material-certificate: **Issuer Portal**
-
-    ---
-
-    Issue verifiable credentials to users from the web console.
-
-    [:octicons-arrow-right-24: Get started](issuer-portal/index.en.md)
-
--   :material-shield-check: **Verifier**
-
-    ---
-
-    Verify credentials presented by users, remotely or in person.
-
-    [:octicons-arrow-right-24: Get started](verifier/index.en.md)
 
 </div>
 
@@ -43,4 +46,3 @@ Welcome. This section explains how to use EUDIStack applications in your day-to-
 ## Something not working?
 
 Before contacting support, check the [troubleshooting](troubleshooting.md) section: it covers the most frequent errors and questions.
-
