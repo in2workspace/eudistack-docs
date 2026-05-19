@@ -7,7 +7,7 @@ Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en
 ## Tipo de wallet
 
 ??? info "¿Cómo sé qué tipo de wallet estoy usando?"
-    Abre **Ajustes**. El campo **Tipo de wallet** indica el modo activo.
+    Abre **[Ajustes](wallet-eudiw/settings.md)**. El campo **[Tipo de wallet](wallet-eudiw/settings.md#walletType)** indica el modo activo.
 
     `EUDIW`:
 

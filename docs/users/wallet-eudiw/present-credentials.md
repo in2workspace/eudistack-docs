@@ -32,16 +32,17 @@ Un Verifier es un servicio o portal que solicita y valida credenciales, por ejem
     ![Pantalla Solicitud de Credencial](../../assets/img/users/wallet-eudiw/vc-select.png){ width="240" }
 
 ??? "4. Seleccionar la credencial a presentar"
-    pulsar la tarjeta correspondiente.
-
-??? "5. El wallet firma y envía la presentación"
-    el dispositivo solicita autenticación (passkey o biometría) como parte del proceso de firma.
+    Pulsar la tarjeta correspondiente.
 
     ![Diálogo de confirmación — ¿Enviar Credencial?](../../assets/img/users/wallet-eudiw/vc-select-confirm.png){ width="240" }
+
+??? "5. El wallet firma y envía la presentación"
+    Confirmar con el passkey del dispositivo (huella dactilar, reconocimiento facial o PIN).
+
 ---
 
 ## Privacidad
 
 - Solo se envía lo que se confirma.
-- El wallet registra cada presentación en *Actividad*, accesible desde **Ajustes → Actividad**.
+- El wallet registra cada presentación en *Actividad*, accesible desde **[Ajustes → Actividad](../wallet-eudiw/settings.md#actividad)**.
 - Es posible denegar la presentación sin penalización. Si se desea reintentar, escanear de nuevo el QR o enlace del Verifier; en algunos casos puede ser necesario solicitar uno nuevo.

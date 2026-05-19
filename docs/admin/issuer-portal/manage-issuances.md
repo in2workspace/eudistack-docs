@@ -16,13 +16,15 @@ Consultar y operar sobre credenciales ya emitidas.
 
     ![Lista de credenciales emitidas en issuer](../../assets/img/admin/issuer-portal/list-credential.png){ width="640" }
 
-    Pulsar una fila de la tabla para acceder al detalle de esa emisión.
+    Pulsar una fila de la tabla para acceder al [detalle de esa emisión](#detalles-de-la-credencial).
 
 ---
 
 ## Detalles de la credencial
 
 ??? "Ver detalle"
+    Accesible pulsando cualquier fila de la [lista de credenciales emitidas](#lista-de-credenciales-emitidas).
+
     Muestra toda la información de la credencial seleccionada: atributos, estado actual, fechas de emisión y caducidad, e historial de cambios de estado.
 
     ![Pantalla de detalle de una emisión](../../assets/img/admin/issuer-portal/credential-detail.png){ width="640" }
@@ -51,10 +53,10 @@ Consultar y operar sobre credenciales ya emitidas.
 ??? "Ver acciones"
     Las acciones se realizan desde la pantalla de detalle de la credencial. Solo algunas acciones están disponibles según el estado de la emisión.
 
-    - ![Estado WITHDRAWN](../../assets/img/admin/issuer-portal/withdrawn.png){ width="120" style="vertical-align: middle;" }: aparece el botón de esta acción cuando la credencial está en estado **BORRADOR**.
+    - **Retirar**: aparece el botón de esta acción cuando la credencial está en estado **BORRADOR**. Cancela la oferta antes de que el destinatario la acepte. Si la oferta no llegó o algún dato es incorrecto, retirar la emisión actual y emitir una nueva credencial con los datos correctos.
 
         ![Credencial en estado DRAFT con botón Retirar](../../assets/img/admin/issuer-portal/withdraw.png){ width="560" }
 
-    - ![Estado REVOKED](../../assets/img/admin/issuer-portal/revoked.png){ width="120" style="vertical-align: middle;" }: aparece el botón de esta acción cuando la credencial está en estado **VÁLIDO**.
+    - **Revocar**: aparece el botón de esta acción cuando la credencial está en estado **VÁLIDO**. Marca la credencial como revocada en el Status List público (cualquier verifier podrá comprobarlo).
 
         ![Credencial en estado VALID con botón Revocar](../../assets/img/admin/issuer-portal/revoke.png){ width="560" }

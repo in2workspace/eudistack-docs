@@ -32,14 +32,10 @@ Esta sección recoge los problemas más frecuentes y cómo resolverlos. Si el pr
     !!! info "Páginas relacionadas"
         - [Gestionar credenciales](wallet-eudiw/manage-credentials.md) — cómo verificar y gestionar el estado de las credenciales en el wallet
 
----
-
-## Verifier
-
-??? "La presentación no llega"
+??? "La presentación no llega al verifier"
     - **Síntoma**: el usuario confirma en su wallet pero el verifier no recibe nada.
     - **Causa probable**: timeout de la sesión o problemas de red.
-    - **Solución**: reiniciar la solicitud. Si persiste, abrir un ticket con el ID de sesión.
+    - **Solución**: reiniciar la solicitud. Si persiste, [contactar con soporte](../support.md) proporcionando la URL del verifier y el código de QR si es posible.
 
 ---
 

@@ -8,6 +8,7 @@ Desde aquí es posible consultar el historial de actividad, personalizar la apar
 
 ---
 
+<a id="actividad"></a>
 ??? "Actividad"
     Historial de operaciones realizadas con el wallet. Lista cada credencial recibida, presentada o eliminada, con timestamp e issuer/verifier asociado.
 
@@ -56,10 +57,11 @@ Desde aquí es posible consultar el historial de actividad, personalizar la apar
     ![Pantalla de registros de cámara en Ajustes](../../assets/img/users/wallet-eudiw/see_logs.png){ width="240" }
 
 ??? "Enviar logs"
-    Abre el cliente de correo del dispositivo con los registros de cámara para enviarlos al equipo de soporte. Visible en ambos tipos de wallet cuando está habilitado por la configuración del entorno.
+    Esta función solo es visible para algunos clientes.
 
     ![Botón Enviar logs en Ajustes](../../assets/img/users/wallet-eudiw/send_logs.png){ width="240" }
 
+<a id="myDevices"></a>
 ??? "Mis Dispositivos <small>— solo Business Wallet</small>"
     Gestiona los dispositivos vinculados a la cuenta. Disponible únicamente en el Business Wallet.
 
@@ -69,6 +71,7 @@ Desde aquí es posible consultar el historial de actividad, personalizar la apar
 
 ---
 
+<a id="walletType"></a>
 ??? "Tipo de wallet"
     Indica el modo de funcionamiento del wallet:
 
@@ -82,3 +85,5 @@ Desde aquí es posible consultar el historial de actividad, personalizar la apar
 
 ??? "Versión"
     Número de versión actual de la aplicación. Solo informativo.
+
+    ![Campo versión en Ajustes mostrando Business Wallet](../../assets/img/users/wallet-eudiw/version.png){ width="320" }

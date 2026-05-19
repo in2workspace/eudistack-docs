@@ -1,4 +1,4 @@
-# Solución de problemas — Administrador
+# Solución de problemas — Administradores
 
 Esta sección recoge los problemas más frecuentes del Portal Issuer y cómo resolverlos. Si el problema no aparece, consulta [soporte](../support.md).
 

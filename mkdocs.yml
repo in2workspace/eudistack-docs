@@ -211,7 +211,7 @@ nav:
           - Dispositivos y claves: users/wallet-business/devices.md
       - Solución de problemas: users/troubleshooting.md
 
-  - Administrador:
+  - Administradores:
       - admin/index.md
       - Portal Issuer:
           - admin/issuer-portal/index.md

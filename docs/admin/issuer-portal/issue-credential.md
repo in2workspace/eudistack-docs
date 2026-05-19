@@ -48,8 +48,10 @@ Pasos para emitir una credencial desde el Portal Issuer. El portal ofrece dos m�
     === "Formato de credencial"
         El formato determina cómo se estructura y protege la credencial.
 
-        - **W3C VC Data Model v2.0** — Formato estándar y el más compatible con servicios externos. Recomendado para la mayoría de los casos.
+        - **W3C VC Data Model v2.0** — Formato estándar y el más compatible con servicios externos.
         - **SD-JWT VC** — Permite al titular mostrar solo los datos necesarios en cada presentación, sin revelar el resto. Recomendado cuando la privacidad de los datos es prioritaria.
+           
+            → Para más información técnica sobre este formato, consulta [SD-JWT VC](../../developers/concepts/sd-jwt-vc.md).
 
     === "Tipo de concesión"
         La principal diferencia es si se requiere un PIN para aceptar la credencial.
@@ -72,6 +74,8 @@ Pasos para emitir una credencial desde el Portal Issuer. El portal ofrece dos m�
         ![Formulario de emisión para LEAR Credential Employee](../../assets/img/admin/issuer-portal/form-employee.png){ width="640" }
 
         ??? info "Poderes disponibles"
+            Los poderes pueden variar según la organización. Los siguientes son algunos ejemplos.
+
             | Función | Acciones | Descripción |
             |---|---|---|
             | **Alta** | Ejecutar | Permite gestionar el proceso de incorporación de nuevos participantes. |
@@ -86,11 +90,18 @@ Pasos para emitir una credencial desde el Portal Issuer. El portal ofrece dos m�
         ![Formulario de emisión para LEAR Credential Machine](../../assets/img/admin/issuer-portal/form-machine.png){ width="640" }
 
         ??? info "Poderes disponibles"
+            Los poderes pueden variar según la organización. Los siguientes son algunos ejemplos.
+
             | Función | Acciones | Descripción |
             |---|---|---|
             | **Alta** | Ejecutar | Permite gestionar el proceso de incorporación de nuevos participantes. |
             | **Oferta de producto** | Crear, Actualizar, Eliminar | Permite crear, modificar y eliminar ofertas de productos o servicios. |
             | **Certificación** | Subir, Acreditar | Permite subir y acreditar certificaciones en nombre de la organización. |
+
+        ??? warning "Guarda la clave privada antes de continuar"
+            Al confirmar la creación, el portal solicita marcar la casilla **"Confirmo que he copiado y guardado de forma segura la clave privada"**. Sin ella, no será posible usar la credencial más adelante.
+
+            ![Diálogo de confirmación con advertencia de clave privada](../../assets/img/admin/issuer-portal/popup-create-vc-machine.png){ width="480" }
 
 ??? "6. Confirmar y crear"
     Pulsar el botón **Crear Credencial**.
@@ -163,8 +174,10 @@ Pasos para emitir una credencial desde el Portal Issuer. El portal ofrece dos m�
     === "Formato de credencial"
         El formato determina cómo se estructura y protege la credencial.
 
-        - **W3C VC Data Model v2.0** — Formato estándar y el más compatible con servicios externos. Recomendado para la mayoría de los casos.
-        - **SD-JWT VC** — Permite al titular mostrar solo los datos necesarios en cada presentación, sin revelar el resto. Recomendado cuando la privacidad de los datos es prioritaria.
+        - **W3C VC Data Model v2.0** — Formato estándar y el más compatible con servicios externos.
+        - **SD-JWT VC** — Permite al titular mostrar solo los datos necesarios en cada presentación, sin revelar el resto. Recomendado cuando la privacidad de los datos es prioritaria. 
+  
+            → Para más información técnica sobre este formato, consulta [SD-JWT VC](../../developers/concepts/sd-jwt-vc.md).
 
     === "Tipo de concesión"
         La principal diferencia es si se requiere un PIN para aceptar la credencial.
@@ -187,6 +200,8 @@ Pasos para emitir una credencial desde el Portal Issuer. El portal ofrece dos m�
         ![Formulario de emisión en nombre de para LEAR Credential Employee](../../assets/img/admin/issuer-portal/form-employee-on-behalf.png){ width="640" }
 
         ??? info "Poderes disponibles"
+            Los poderes pueden variar según la organización. Los siguientes son algunos ejemplos.
+
             | Función | Acciones | Descripción |
             |---|---|---|
             | **Alta** | Ejecutar | Permite gestionar el proceso de incorporación de nuevos participantes. |
@@ -201,11 +216,18 @@ Pasos para emitir una credencial desde el Portal Issuer. El portal ofrece dos m�
         ![Formulario de emisión en nombre de para LEAR Credential Machine](../../assets/img/admin/issuer-portal/form-machine-on-behalf.png){ width="640" }
 
         ??? info "Poderes disponibles"
+            Los poderes pueden variar según la organización. Los siguientes son algunos ejemplos.
+
             | Función | Acciones | Descripción |
             |---|---|---|
             | **Alta** | Ejecutar | Permite gestionar el proceso de incorporación de nuevos participantes. |
             | **Oferta de producto** | Crear, Actualizar, Eliminar | Permite crear, modificar y eliminar ofertas de productos o servicios. |
             | **Certificación** | Subir, Acreditar | Permite subir y acreditar certificaciones en nombre de la organización. |
+
+        ??? warning "Guarda la clave privada antes de continuar"
+            Al confirmar la creación, el portal solicita marcar la casilla **"Confirmo que he copiado y guardado de forma segura la clave privada"**. Sin ella, no será posible usar la credencial más adelante.
+
+            ![Diálogo de confirmación con advertencia de clave privada](../../assets/img/admin/issuer-portal/popup-create-vc-machine.png){ width="480" }
 
 ??? "6. Confirmar y crear"
     Pulsar el botón **Crear Credencial**.

@@ -14,7 +14,7 @@ Cómo aceptar una credencial verificable emitida por un Issuer.
 ## Pasos
 
 ??? "1. Recibir la oferta"
-    desde el portal del Issuer (QR en pantalla) o por email (con QR y botón *Abrir en Wallet*).
+    Desde el portal del Issuer (QR en pantalla) o por email (con QR y botón *Abrir en Wallet*).
 
     === "QR en pantalla"
         ![La oferta de QR por el portal del Issuer](../../assets/img/users/wallet-eudiw/issuer-qr-ui.png){ width="400" }
@@ -49,7 +49,7 @@ Cómo aceptar una credencial verificable emitida por un Issuer.
               Si el QR ha expirado, usar el enlace **Solicitar uno nuevo** del correo.
 
 ??? "2. El wallet muestra la oferta"
-    el wallet muestra el emisor, el tipo de credencial y los atributos incluidos. En la parte inferior aparece un temporizador de cuenta regresiva: pulsar **Aceptar** antes de que expire.
+    El wallet muestra el emisor, el tipo de credencial y los atributos incluidos. En la parte inferior aparece un temporizador de cuenta regresiva: pulsar **Aceptar** antes de que expire.
 
     ![Pantalla Nueva credencial con temporizador — aceptar credencial](../../assets/img/users/wallet-eudiw/new-vc-offer.png){ width="320" }
 
@@ -70,7 +70,7 @@ Cómo aceptar una credencial verificable emitida por un Issuer.
         </div>
 
 ??? "3. Confirmar con el passkey del dispositivo"
-    tras la confirmación con passkey (huella dactilar, reconocimiento facial o PIN), la credencial se almacena en el wallet.
+    Tras la confirmación con passkey (huella dactilar, reconocimiento facial o PIN), la credencial se almacena en el wallet.
 
 ??? "4. La credencial aparece en la pestaña *Credenciales*"
     ![Credencial añadida a la pestaña credenciales](../../assets/img/users/wallet-eudiw/new-vc.png){ width="240" }
