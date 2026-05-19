@@ -120,7 +120,7 @@ Once validated:
     }
     ```
 
-    > **Note:** the `session_id` value is the `{id}` used in **Option B: Polling** (`GET /verifier/oid4vp/auth-request/{id}`).
+    > **Note:** the `session_id` value is the `{id}` used in **Option B: Polling** (`GET /api/v1/authorization-request/{id}`) and as the `state` parameter in **Option A** SSE events.
 
 Open the Wallet:
 
@@ -150,18 +150,24 @@ There are two ways to obtain the result.
 
 === "Option B: Polling"
 
-    Query the verification status by session ID:
+    Query the verification status using the integrator-facing endpoint, with the `session_id` obtained in Step 4:
 
     ```http
-    GET https://sandbox-stg.eudistack.net/verifier/oid4vp/auth-request/{id}
+    GET https://sandbox-stg.eudistack.net/verifier/api/v1/authorization-request/{id}
+    Authorization: Bearer {{token}}
     ```
 
     ```json
     {
+      "session_id": "abc123",
+      "status": "verified",
       "verified": true,
       "credential_type": "learcredential.employee.sd.1"
     }
     ```
+
+    !!! warning "Do not confuse with the Wallet endpoint"
+        `GET /oid4vp/auth-request/{id}` is a **Wallet-facing** OID4VP protocol endpoint used by the Wallet to retrieve the presentation request JWT. It is **not** a verification-status endpoint for integrators.
 
 ## Next steps
 

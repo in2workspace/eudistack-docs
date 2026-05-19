@@ -16,8 +16,9 @@ API for initiating credential verification and validating presentations.
     | Method | Path | Description |
     |--------|------|-------------|
     | `POST` | `/api/v1/authorization-request` | Creates a new presentation session (returns `session_id` + URI/QR). |
-    | `GET`  | `/oid4vp/auth-request/{id}` | The Wallet retrieves the presentation request JWT by session ID. |
-    | `POST` | `/oid4vp/auth-response` | Endpoint where the Wallet sends the VP Token for verification. |
+    | `GET`  | `/api/v1/authorization-request/{id}` | **Integrator** — Poll the verification status of an existing session by `session_id`. |
+    | `GET`  | `/oid4vp/auth-request/{id}` | **Wallet-facing (OID4VP protocol)** — The Wallet retrieves the presentation request JWT by session ID. Not a verification-status endpoint. |
+    | `POST` | `/oid4vp/auth-response` | **Wallet-facing (OID4VP protocol)** — Endpoint where the Wallet sends the VP Token for verification. |
 
 === "SSE (Portal / events)"
 
