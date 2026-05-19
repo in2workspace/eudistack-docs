@@ -12,7 +12,7 @@ Esta guía te lleva de cero a tener tu primera integración funcional con EUDISt
 
 ## Requisitos
 
-??? info "Que necesitas antes de empezar"
+??? info "Qué necesitas antes de empezar"
 
     - Familiaridad con OAuth 2.0 y JWT.
     - Capacidad de exponer un endpoint HTTPS para callbacks (en desarrollo basta con un túnel tipo ngrok).
