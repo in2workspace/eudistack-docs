@@ -1,6 +1,5 @@
 # Primeros pasos
 
-<!-- TODO: completar con datos reales del sandbox -->
 
 Esta guía te lleva de cero a tener tu primera integración funcional con EUDIStack.
 
@@ -13,6 +12,8 @@ Esta guía te lleva de cero a tener tu primera integración funcional con EUDISt
 
 ## Requisitos
 
-- Familiaridad con OAuth 2.0 y JWT.
-- Capacidad de exponer un endpoint HTTPS para callbacks (en desarrollo basta con un túnel tipo ngrok).
-- Cliente HTTP de tu elección (curl, Postman, código nativo).
+??? info "Qué necesitas antes de empezar"
+
+    - Familiaridad con OAuth 2.0 y JWT.
+    - Capacidad de exponer un endpoint HTTPS para callbacks (en desarrollo basta con un túnel tipo ngrok).
+    - Cliente HTTP de tu elección (curl, Postman, código nativo).

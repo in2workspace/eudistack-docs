@@ -6,15 +6,15 @@
 
 ## Errores / Incorrecciones
 
-### 1. `dpop-pkce.md` — Texto duplicado/mal ubicado
+### 1.SOLVED `dpop-pkce.md` — Texto duplicado/mal ubicado
 
 El párrafo introductorio de DPoP aparece en medio de la sección PKCE (líneas 21-22), partido en dos fragmentos distintos. El contenido aparece dos veces y en el lugar incorrecto, lo que hace la sección confusa.
 
-### 2. `first-integration.md` — Numeración duplicada en Paso 2
+### 2.SOLVED `first-integration.md` — Numeración duplicada en Paso 2
 
 El paso "Abrir la Credential Offer" tiene dos puntos numerados como `4.` (líneas 87 y 88). Uno de ellos debería ser el `5.`.
 
-### 3. `first-integration.md` vs `api-reference/verifier.md` — Método HTTP contradictorio
+### 3.SOLVED `first-integration.md` vs `api-reference/verifier.md` — Método HTTP contradictorio
 
 El tutorial usa `GET /verifier/oid4vp/auth-request/{id}` para el polling de resultado, pero la referencia API declara ese mismo endpoint como `POST`. Uno de los dos está mal.
 
@@ -22,7 +22,7 @@ El tutorial usa `GET /verifier/oid4vp/auth-request/{id}` para el polling de resu
 
 La página dice que "soporta firmas mediante JAdES". JAdES (ETSI EN 319 132) es un estándar de firma diferente de JWS/ES256. SD-JWT VC usa JWS estándar con ES256, no JAdES. Esta afirmación mezcla conceptos y puede inducir a error a los integradores.
 
-### 5. `scim-provisioning.md` — Typo
+### 5.SOLVED `scim-provisioning.md` — Typo
 
 Línea 163: `"Selecciona SCIM cmo modo de provisioning"` → debería ser `"como"`.
 
@@ -30,14 +30,14 @@ Línea 163: `"Selecciona SCIM cmo modo de provisioning"` → debería ser `"como
 
 ## Inconsistencias de URLs
 
-### 6. Patrón de URL del Issuer inconsistente
+### 6.SOLVED Patrón de URL del Issuer inconsistente
 
 - `oid4vci.md` y `dpop-pkce.md` (ejemplo DPoP) usan: `https://issuer.sandbox.eudistack.net`
 - Todo el resto de la documentación usa: `https://sandbox-stg.eudistack.net/issuer`
 
 El patrón canónico (consistente con `multi-tenant.md`) es `{tenant}-stg.eudistack.net`. La primera forma debería eliminarse.
 
-### 7. Patrón de URL SCIM diferente del patrón multi-tenant
+### 7.SOLVED Patrón de URL SCIM diferente del patrón multi-tenant
 
 `scim-provisioning.md` declara `https://scim.<tenant>.eudistack.net/scim/v2` con un subdomain `scim.` por delante, que no encaja con el patrón `{tenant}-stg.eudistack.net` establecido en `multi-tenant.md`. Habría que aclarar cuál es el patrón real de producción/STG.
 
@@ -45,7 +45,7 @@ El patrón canónico (consistente con `multi-tenant.md`) es `{tenant}-stg.eudist
 
 ## Inconsistencias de paths de API
 
-### 8. Tres paths distintos para "crear una oferta de credencial"
+### 8.SOLVED Tres paths distintos para "crear una oferta de credencial"
 
 | Archivo | Path |
 |---|---|
@@ -55,7 +55,7 @@ El patrón canónico (consistente con `multi-tenant.md`) es `{tenant}-stg.eudist
 
 Si los tres son válidos (API de gestión vs. endpoint OID4VCI), debería explicarse la diferencia. Si no, hay que consolidar.
 
-### 9. Path del token endpoint
+### 9.SOLVED Path del token endpoint
 
 `dpop-pkce.md` muestra `/oauth/token` pero `api-reference/issuer.md` declara el token endpoint en `/oid4vci/v1/token`. O son paths diferentes para propósitos distintos (habría que documentarlo) o uno está desactualizado.
 
@@ -63,7 +63,7 @@ Si los tres son válidos (API de gestión vs. endpoint OID4VCI), debería explic
 
 ## Contenido faltante / TODOs pendientes
 
-### 10. TODOs que señalan contenido incompleto
+### 10.SOLVED TODOs que señalan contenido incompleto
 
 Los siguientes archivos tienen placeholders visibles que no deberían estar en una documentación publicada:
 
@@ -76,11 +76,11 @@ Los siguientes archivos tienen placeholders visibles que no deberían estar en u
 - `api-direct-issuance.md` — TODO curl ejemplos + webhooks
 - `troubleshooting.md` — `<!-- TODO: ampliar con incidencias reales -->`
 
-### 11. Endpoint SSE no documentado en la referencia API
+### 11.SOLVED Endpoint SSE no documentado en la referencia API
 
 `oidc-idp.md` menciona explícitamente `GET /api/login/events?state=...` como la conexión SSE que usa el Portal, pero este endpoint no aparece en `api-reference/verifier.md`.
 
-### 12. `/.well-known/jwt-issuer` no está en la tabla de well-known del Issuer
+### 12.SOLVED `/.well-known/jwt-issuer` no está en la tabla de well-known del Issuer
 
 `troubleshooting.md` referencia este endpoint como causa de fallos de validación del wallet, pero no está listado en la tabla de well-known endpoints de `api-reference/issuer.md`.
 
@@ -88,7 +88,7 @@ Los siguientes archivos tienen placeholders visibles que no deberían estar en u
 
 Las pestañas "Cross-device (QR)" y "Direct Post" tienen título pero el cuerpo está vacío. No aportan información al lector.
 
-### 14. `api-direct-issuance.md` — Guía básicamente incompleta
+### 14.SOLVED `api-direct-issuance.md` — Guía básicamente incompleta
 
 Es la guía más usada en automatizaciones backend y apenas tiene contenido. Le faltan: ejemplo de autenticación M2M, ejemplo de llamada completa, modelo de webhooks y el campo `client_request_id` mencionado no aparece en ningún otro ejemplo de la documentación.
 
@@ -108,7 +108,7 @@ La documentación mezcla tres formas diferentes para referirse al mismo formato:
 
 El identificador normativo es `dc+sd-jwt` (el que va en los metadatos). Deberían usarse de forma coherente.
 
-### 16. `credential_configuration_id` inconsistente entre páginas
+### 16.SOLVED `credential_configuration_id` inconsistente entre páginas
 
 | Archivo | Valor usado |
 |---|---|
@@ -118,7 +118,7 @@ El identificador normativo es `dc+sd-jwt` (el que va en los metadatos). Debería
 
 Si son formatos o versiones diferentes, debería explicarse la diferencia; si no, habría que consolidar.
 
-### 17. `first-integration.md` — Opción B del Paso 5 sin etiqueta
+### 17.SOLVED `first-integration.md` — Opción B del Paso 5 sin etiqueta
 
 "Opción B:" no tiene nombre. Debería ser "Opción B: Polling" o similar.
 
@@ -126,7 +126,7 @@ Si son formatos o versiones diferentes, debería explicarse la diferencia; si no
 
 El link `[Digital Credential Query Language (DCQL)]` apunta a un fragmento de la spec OID4VP. DCQL tiene su propia especificación: `openid-4-verifiable-credential-query-language-1_0`.
 
-### 19. `api-reference/verifier.md` — Link Swagger apunta a URL live del sandbox
+### 19.SOLVED `api-reference/verifier.md` — Link Swagger apunta a URL live del sandbox
 
 El link al Swagger UI apunta directamente a `https://sandbox-stg.eudistack.net/verifier/v3/api-docs`. Si el entorno STG no está levantado, el link está roto. Sería preferible una URL estable o añadir una nota de que requiere el entorno activo.
 
