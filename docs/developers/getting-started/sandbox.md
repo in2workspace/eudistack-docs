@@ -1,6 +1,5 @@
 # Sandbox
 
-<!-- TODO: rellenar URLs reales del sandbox y proceso de alta -->
 
 EUDIStack ofrece un entorno **sandbox** público para que pruebes la integración antes de pasar a un tenant productivo.
 Permite validar flujos completos de emisión y verificación utilizando OID4VCI y OID4VP con datos sintéticos y credenciales de prueba.

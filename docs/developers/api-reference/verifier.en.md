@@ -2,31 +2,50 @@
 
 API for initiating credential verification and validating presentations.
 
-## OpenAPI Specification
+??? info "OpenAPI Specification"
+    The Verifier OpenAPI specification is automatically generated from the backend service (`springdoc-openapi`).
 
-The Verifier OpenAPI specification is automatically generated from the backend service (`springdoc-openapi`).
+    - [Verifier API (Swagger UI)](https://sandbox-stg.eudistack.net/verifier/v3/api-docs) *(requires the sandbox environment to be active)*.
 
-- [Verifier API (Swagger UI)](https://sandbox-stg.eudistack.net/verifier/v3/api-docs).
+---
 
-## Main Endpoints (External Integration)
+## Endpoints
 
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/oid4vp/auth-request/{id}` | Generates or retrieves a presentation request (JWT for QR). |
-| POST | `/oid4vp/auth-response` | Endpoint where the Wallet sends the VP Token for verification. |
-| GET | `/.well-known/openid-configuration` | OIDC Discovery for the Verifier. |
-| GET | `/oauth2/jwks` | Verifier public keys for cryptographic validation. |
+=== "OID4VP Presentation"
 
-## Response Modes
+    | Method | Path | Description |
+    |--------|------|-------------|
+    | `POST` | `/api/v1/authorization-request` | Creates a new presentation session (returns `session_id` + URI/QR). |
+    | `GET`  | `/oid4vp/auth-request/{id}` | The Wallet retrieves the presentation request JWT by session ID. |
+    | `POST` | `/oid4vp/auth-response` | Endpoint where the Wallet sends the VP Token for verification. |
 
-- **direct_post**: the wallet sends the presentation directly via POST to the Verifier.
-- **direct_post.jwt**: response encrypted using the Verifier’s public key.
+=== "SSE (Portal / events)"
 
-## Technical Notes
+    | Method | Path | Description |
+    |--------|------|-------------|
+    | `GET` | `/api/login/events` | SSE connection: the Portal subscribes to receive the presentation result (`?state=<session_state>`). |
 
-- Protocol: OpenID4VP (OID4VP).
-- OAuth2 / OIDC compatible.
-- Formats:
-    - JWT VP.
-    - SD-JWT VC.
-- Cryptography: ES256 (ECDSA P-256).
+=== "OIDC / Discovery"
+
+    | Method | Path | Description |
+    |--------|------|-------------|
+    | `GET` | `/.well-known/openid-configuration` | OIDC Discovery for the Verifier. |
+    | `GET` | `/oauth2/jwks` | Verifier public keys for cryptographic validation. |
+
+---
+
+## Response modes
+
+=== "direct_post"
+    The wallet sends the VP Token presentation directly via `POST` to the Verifier.
+
+=== "direct_post.jwt"
+    Response encrypted using the Verifier's public key. Provides stronger privacy on the channel.
+
+---
+
+??? info "Technical notes"
+    - **Protocol:** OpenID4VP (OID4VP).
+    - **Compatible with:** OAuth2 / OIDC.
+    - **Supported formats:** JWT VP · SD-JWT VC (`dc+sd-jwt`).
+    - **Cryptography:** ES256 (ECDSA P-256).
