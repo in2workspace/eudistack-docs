@@ -200,20 +200,24 @@ nav:
           - Recibir credenciales: users/wallet-eudiw/receive-credentials.md
           - Presentar credenciales: users/wallet-eudiw/present-credentials.md
           - Gestionar credenciales: users/wallet-eudiw/manage-credentials.md
+          - Ajustes: users/wallet-eudiw/settings.md
       - Wallet — Business Wallet:
           - users/wallet-business/index.md
           - Primeros pasos: users/wallet-business/getting-started.md
+          - Recibir credenciales: users/wallet-business/receive-credentials.md
+          - Presentar credenciales: users/wallet-business/present-credentials.md
+          - Gestionar credenciales: users/wallet-business/manage-credentials.md
+          - Ajustes: users/wallet-business/settings.md
           - Dispositivos y claves: users/wallet-business/devices.md
-          - Operativa diaria: users/wallet-business/daily-operations.md
-      - Portal Issuer:
-          - users/issuer-portal/index.md
-          - Emitir una credencial: users/issuer-portal/issue-credential.md
-          - Gestionar emisiones: users/issuer-portal/manage-issuances.md
-      - Verifier:
-          - users/verifier/index.md
-          - Verificación remota: users/verifier/remote-verification.md
-          - Verificación presencial: users/verifier/proximity-verification.md
       - Solución de problemas: users/troubleshooting.md
+
+  - Administradores:
+      - admin/index.md
+      - Portal Issuer:
+          - admin/issuer-portal/index.md
+          - Emitir una credencial: admin/issuer-portal/issue-credential.md
+          - Gestionar emisiones: admin/issuer-portal/manage-issuances.md
+      - Solución de problemas: admin/troubleshooting.md
 
   - Developers:
       - developers/index.md

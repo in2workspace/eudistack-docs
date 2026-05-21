@@ -1,6 +1,25 @@
 # Guías de usuario
 
-Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en tu día a día. Elige la herramienta que vas a usar:
+Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en tu día a día.
+
+---
+
+## Tipo de wallet
+
+??? info "¿Cómo sé qué tipo de wallet estoy usando?"
+    Abre **[Ajustes](wallet-eudiw/settings.md)**. El campo **[Tipo de wallet](wallet-eudiw/settings.md#walletType)** indica el modo activo.
+
+    `EUDIW`:
+
+    ![Campo Tipo de wallet en Ajustes mostrando EUDIW](../../assets/img/users/type-wallet-eudiw.png){ width="320" }
+
+    `Business Wallet`:
+
+    ![Campo Tipo de wallet en Ajustes mostrando Business Wallet](../../assets/img/users/type-wallet-buisiness.png){ width="320" }
+
+---
+
+## Herramientas disponibles
 
 <div class="grid cards" markdown>
 
@@ -19,22 +38,6 @@ Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en
     El wallet **organizacional** (EBW). Las claves se custodian en servidor con autenticación reforzada. Pensado para empleados de organizaciones.
 
     [:octicons-arrow-right-24: Empezar](wallet-business/index.md)
-
--   :material-certificate: **Portal Issuer**
-
-    ---
-
-    Emite credenciales verificables a los usuarios desde la consola web.
-
-    [:octicons-arrow-right-24: Empezar](issuer-portal/index.md)
-
--   :material-shield-check: **Verifier**
-
-    ---
-
-    Verifica credenciales presentadas por usuarios, en remoto o presencialmente.
-
-    [:octicons-arrow-right-24: Empezar](verifier/index.md)
 
 </div>
 

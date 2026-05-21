@@ -1,48 +1,60 @@
-# Recibir credenciales — EUDIW
+# Recibir credenciales
 
 Cómo aceptar una credencial verificable emitida por un Issuer.
 
+---
+
 ## Métodos disponibles
 
-- **Escaneo de QR**: el Issuer presenta un QR en pantalla; escanearlo desde el wallet.
-- **Por email**: se recibe un correo con un código QR y un botón *Abrir en Wallet*; escanear el QR o pulsar el botón para añadir la credencial al wallet.
+- **QR en pantalla**: el portal del Issuer muestra un código QR en pantalla. Escanearlo con el wallet para añadir la credencial.
+- **Por email**: se recibe un correo con un código QR y un botón *Abrir en Wallet*. Escanear el QR o pulsar el botón para añadir la credencial.
+
+---
 
 ## Pasos
 
-1. **Recibir la oferta**: desde el portal del Issuer (QR en pantalla) o por email (con QR y botón *Abrir en Wallet*).
+??? "1. Recibir la oferta"
+    Desde el portal del Issuer (QR en pantalla) o por email (con QR y botón *Abrir en Wallet*).
 
-    <figure markdown style="display: table; margin-left: 0;">
-      ![La oferta de QR por el portal del Issuer](../../assets/img/users/wallet-eudiw/issuer-qr-ui.png){ width="320" }
-      <figcaption>Portal del Issuer — QR en pantalla</figcaption>
-    </figure>
+    === "QR en pantalla"
+        ![La oferta de QR por el portal del Issuer](../../assets/img/users/wallet-eudiw/issuer-qr-ui.png){ width="400" }
 
-    <figure markdown style="display: table; margin-left: 0;">
-      ![La oferta de QR y enlace por el correo](../../assets/img/users/wallet-eudiw/email-qr.png){ width="320" }
-      <figcaption>Correo — QR y botón Abrir en Wallet</figcaption>
-    </figure>
+        Para escanear el QR desde el wallet: pulsar la pestaña *Escaneo QR* en la barra de navegación inferior.
 
-    !!! info "Validez del QR"
-        - **QR en pantalla**: válido durante **10 minutos** desde que aparece en pantalla.
-        - **QR por email**: válido durante **10 minutos** desde el momento del envío,
-          no desde que se abre el correo. Si el correo tarda en llegar o se abre
-          más tarde, el tiempo disponible puede ser menor.
+        ![Barra de navegación inferior del wallet](../../assets/img/users/wallet-eudiw/nav-bottom-qr.png){ width="240" }
 
-          Si el QR ha expirado, usar el enlace **Solicitar uno nuevo** del correo.
+        Apuntar la cámara al código QR. También es posible la URL manualmente en el campo de texto.
 
-    Para escanear el QR desde el wallet: pulsar la pestaña *Escaneo QR* en la barra de navegación inferior.
+        ![Pantalla de escaneo de QR en el wallet](../../assets/img/users/wallet-eudiw/wallet-scan.png){ width="240" }
 
-    ![Barra de navegación inferior del wallet](../../assets/img/users/wallet-eudiw/nav-bottom-qr.png){ width="240" }
+        ??? warning "Validez del QR"
+            - **QR en pantalla**: válido durante **10 minutos** desde que aparece en pantalla.
+          
+    === "Por email"
+        ![La oferta de QR y enlace por el correo](../../assets/img/users/wallet-eudiw/email-qr.png){ width="400" }
 
-    Apuntar la cámara al código QR. También es posible la URL manualmente en el campo de texto.
+        Para escanear el QR desde el wallet: pulsar la pestaña *Escaneo QR* en la barra de navegación inferior.
 
-    ![Pantalla de escaneo de QR en el wallet](../../assets/img/users/wallet-eudiw/wallet-scan.png){ width="240" }
+        ![Barra de navegación inferior del wallet](../../assets/img/users/wallet-eudiw/nav-bottom-qr.png){ width="240" }
 
-2. **El wallet muestra la oferta**: el wallet muestra el emisor, el tipo de credencial y los atributos incluidos. En la parte inferior aparece un temporizador de cuenta regresiva: pulsar **Aceptar** antes de que expire.
+        Apuntar la cámara al código QR. También es posible la URL manualmente en el campo de texto.
+
+        ![Pantalla de escaneo de QR en el wallet](../../assets/img/users/wallet-eudiw/wallet-scan.png){ width="240" }
+
+        ??? warning "Validez del QR"
+            - **QR por email**: válido durante **10 minutos** desde el momento del envío,
+              no desde que se abre el correo. Si el correo tarda en llegar o se abre
+              más tarde, el tiempo disponible puede ser menor.
+
+              Si el QR ha expirado, usar el enlace **Solicitar uno nuevo** del correo.
+
+??? "2. El wallet muestra la oferta"
+    El wallet muestra el emisor, el tipo de credencial y los atributos incluidos. En la parte inferior aparece un temporizador de cuenta regresiva: pulsar **Aceptar** antes de que expire.
 
     ![Pantalla Nueva credencial con temporizador — aceptar credencial](../../assets/img/users/wallet-eudiw/new-vc-offer.png){ width="320" }
 
 
-    !!! warning "La credencial no se añade si se cancela o expira el tiempo"
+    ??? warning "La credencial no se añade si se cancela o expira el tiempo"
         Si se pulsa **Cancelar** o el temporizador llega a cero sin confirmar, la oferta se rechaza y la credencial no se almacena en el wallet.
         
         ![Pantalla de temporizador y botón Cancelar en la oferta de credencial](../../assets/img/users/wallet-eudiw/new-vc-timer-cancel.png){ width="320" }
@@ -53,11 +65,15 @@ Cómo aceptar una credencial verificable emitida por un Issuer.
 
         ![Correo de incidencia temporal con enlace Solicitar uno nuevo](../../assets/img/users/wallet-eudiw/email-resend.png){ width="320" }
 
-3. **Confirmar con el passkey del dispositivo**: tras la confirmación, la credencial se almacena en el wallet.
+        <div style="text-align: right" markdown>
+          [Solución de problemas :material-arrow-right:](../troubleshooting.md){ .md-button }
+        </div>
 
-4. **La credencial aparece en la pestaña *Credenciales***.
+??? "3. Confirmar con el passkey del dispositivo"
+    Tras la confirmación con passkey (huella dactilar, reconocimiento facial o PIN), la credencial se almacena en el wallet.
 
-    ![Credencial añadida a la pestaña credenciales](../../assets/img/users/wallet-eudiw/new-vc.png){ width="320" }
+??? "4. La credencial aparece en la pestaña *Credenciales*"
+    ![Credencial añadida a la pestaña credenciales](../../assets/img/users/wallet-eudiw/new-vc.png){ width="240" }
 
 ## Errores comunes
 

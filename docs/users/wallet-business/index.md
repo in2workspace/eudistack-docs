@@ -1,15 +1,6 @@
 # Wallet — Business Wallet
 
-El **European Business Wallet (EBW)** es la versión para usuarios corporativos del wallet. A diferencia del EUDIW personal, las credenciales se almacenan en el servidor de la organización y son accesibles desde varios dispositivos registrados. Las claves criptográficas se generan en el dispositivo con el passkey (biometría o PIN) y nunca salen de él.
-
-!!! tip "¿Cómo identificar el Business Wallet?"
-    En **Ajustes**, el campo **Tipo de wallet** muestra el modo activo: `Business Wallet`.
-
-    ![Campo Tipo de wallet en Ajustes](../../assets/img/users/wallet-buisiness/type-wallet.png){ width="320" }
-
-    Además, en Ajustes aparece la sección **Mis Dispositivos**, que no existe en el EUDIW personal.
-
-    ![Sección Mis Dispositivos en Ajustes](../../assets/img/users/wallet-buisiness/devices.png){ width="320" }
+El **European Business Wallet (EBW)** es la versión para **usuarios corporativos** del wallet. A diferencia del EUDIW personal, las credenciales se almacenan en el servidor de la organización y son accesibles desde varios dispositivos registrados. Las claves criptográficas se generan en el dispositivo con el passkey (huella dactilar, reconocimiento facial o PIN) y nunca salen de él.
 
 ## Diferencias clave frente al EUDIW
 
@@ -28,12 +19,24 @@ El **European Business Wallet (EBW)** es la versión para usuarios corporativos 
 
     Activar la cuenta, verificar el email corporativo y crear el passkey en el primer dispositivo.
 
+-   :material-download: [**Recibir credenciales**](receive-credentials.md)
+
+    Cómo aceptar una credencial emitida por un Issuer.
+
+-   :material-share: [**Presentar credenciales**](present-credentials.md)
+
+    Cómo compartir credenciales con un Verifier de forma selectiva.
+
+-   :material-folder-account: [**Gestionar credenciales**](manage-credentials.md)
+
+    Ver y eliminar credenciales del wallet.
+
+-   :material-cog: [**Ajustes**](settings.md)
+
+    Personalizar la apariencia, el idioma y consultar el historial de actividad.
+
 -   :material-key-chain: [**Dispositivos y claves**](devices.md)
 
     Gestionar los dispositivos autorizados desde los que es posible operar.
-
--   :material-briefcase-clock: [**Operativa diaria**](daily-operations.md)
-
-    Recibir y presentar credenciales en nombre de la organización.
 
 </div>

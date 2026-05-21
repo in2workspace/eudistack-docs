@@ -1,0 +1,1 @@
+--8<-- "docs/users/wallet-eudiw/receive-credentials.md"
