@@ -1,0 +1,1 @@
+--8<-- "docs/users/wallet-eudiw/manage-credentials.en.md"

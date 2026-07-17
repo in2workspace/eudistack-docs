@@ -156,3 +156,14 @@ Here you will find a summary of the most relevant new features and improvements 
         - **Encrypted credential storage:** Wallet credentials are stored encrypted with AES-256-GCM. Their full lifecycle is managed (valid, suspended, revoked, expired) with traceable auditing.
 
         - **Integrated observability:** Standardized health endpoints, distributed tracing (OTLP) and Prometheus metrics, aligned with the rest of the platform components.
+
+---
+
+## Documentation
+
+??? "Knowledge Base"
+    === "2026-07"
+        **English guides now available**
+
+        - The user guides (EUDIW Wallet and Business Wallet) and the administrator guides (Issuer Portal) are now fully available in English, in addition to Spanish.
+        - You can switch between Spanish and English at any time from the language selector in the header.

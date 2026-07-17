@@ -97,13 +97,23 @@ plugins:
             Usuarios: Users
             Wallet — EUDIW: Wallet — EUDIW
             Wallet — Business Wallet: Wallet — Business Wallet
+            Recibir credenciales: Receive credentials
+            Presentar credenciales: Present credentials
+            Gestionar credenciales: Manage credentials
+            Ajustes: Settings
+            Dispositivos y claves: Devices & keys
+            Administradores: Admins
             Portal Issuer: Issuer Portal
+            Emitir una credencial: Issue a credential
+            Gestionar emisiones: Manage issuances
             Verifier: Verifier
             Solución de problemas: Troubleshooting
             Developers: Developers
             Primeros pasos: Getting Started
+            Tu primera integración: Your first integration
             Conceptos: Concepts
             Guías: Guides
+            OIDC IdP (login con credencial): OIDC IdP (credential login)
             Referencia API: API Reference
             Referencia: Reference
             Glosario: Glossary

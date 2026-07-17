@@ -157,3 +157,13 @@ Aquí encontrarás un resumen de las novedades y mejoras más relevantes de la p
         - **Almacenamiento cifrado de credenciales:** Las credenciales del wallet se almacenan cifradas con AES-256-GCM. Se gestiona su ciclo de vida completo (válida, suspendida, revocada, expirada) con auditoría trazable.
 
         - **Observabilidad integrada:** Endpoints de salud normalizados, trazabilidad distribuida (OTLP) y métricas Prometheus, alineados con el resto de componentes de la plataforma.
+
+---
+
+## Documentación
+
+??? "Knowledge Base"
+    === "2026-07"
+        **Guías disponibles en inglés**
+
+        - Las guías de usuario (Wallet EUDIW y Business Wallet) y las guías de administrador (Portal Issuer) están ahora completamente disponibles en inglés, además de en castellano.

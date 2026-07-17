@@ -11,11 +11,11 @@ Bienvenido. Esta sección te explica cómo usar las aplicaciones de EUDIStack en
 
     `EUDIW`:
 
-    ![Campo Tipo de wallet en Ajustes mostrando EUDIW](../../assets/img/users/type-wallet-eudiw.png){ width="320" }
+    ![Campo Tipo de wallet en Ajustes mostrando EUDIW](../assets/img/users/type-wallet-eudiw.png){ width="320" }
 
     `Business Wallet`:
 
-    ![Campo Tipo de wallet en Ajustes mostrando Business Wallet](../../assets/img/users/type-wallet-buisiness.png){ width="320" }
+    ![Campo Tipo de wallet en Ajustes mostrando Business Wallet](../assets/img/users/type-wallet-buisiness.png){ width="320" }
 
 ---
 

@@ -12,7 +12,14 @@
       "Bash(git -C \"/Users/ocanades/Projects/eudistack/eudistack-docs\" diff 2c77bd8..1a4a8b4 -- mkdocs.yml)",
       "Bash(git -C \"/Users/ocanades/Projects/eudistack/eudistack-docs\" show --name-status 2c77bd8)",
       "Bash(git -C \"/Users/ocanades/Projects/eudistack/eudistack-docs\" diff 083105f..1a4a8b4 --stat)",
-      "Bash(mkdocs build)"
+      "Bash(mkdocs build)",
+      "Bash(grep -vE '#[a-z0-9-]*$')",
+      "Bash(python -c \"import mkdocs\")",
+      "Bash(pip --version)",
+      "Bash(python -m venv .venv-verify)",
+      "Bash(./.venv-verify/Scripts/python.exe -m pip install -q -r requirements.txt)",
+      "Bash(grep -nE 'type-wallet|\\\\.\\\\./\\\\.\\\\./assets' docs/users/index.md)",
+      "Bash(grep -nE 'type-wallet|\\\\.\\\\./\\\\.\\\\./assets' docs/users/index.en.md)"
     ]
   }
 }
