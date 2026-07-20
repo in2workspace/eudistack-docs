@@ -14,7 +14,7 @@ Los componentes frontend y backend distinguen automáticamente el tenant a parti
 flowchart LR
     A[Wallet / Client Application]
 
-    A --> B[sandbox-stg.eudistack.net]
+    A --> B[sandbox.stg.eudistack.net]
     A --> C[dome-stg.eudistack.net]
 
     B --> D[Shared Issuer Backend]
@@ -33,7 +33,7 @@ El tenant se resuelve automáticamente a partir del **subdominio** de la petici�
 ??? example "Ejemplos de resolución de tenant"
     | URL | Tenant resuelto |
     |---|---|
-    | `sandbox-stg.eudistack.net` | `sandbox` |
+    | `sandbox.stg.eudistack.net` | `sandbox` |
     | `dome-stg.eudistack.net` | `dome` |
     | `kpmg-stg.eudistack.net` | `kpmg` |
 

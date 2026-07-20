@@ -33,7 +33,7 @@ Línea 163: `"Selecciona SCIM cmo modo de provisioning"` → debería ser `"como
 ### 6.SOLVED Patrón de URL del Issuer inconsistente
 
 - `oid4vci.md` y `dpop-pkce.md` (ejemplo DPoP) usan: `https://issuer.sandbox.eudistack.net`
-- Todo el resto de la documentación usa: `https://sandbox-stg.eudistack.net/issuer`
+- Todo el resto de la documentación usa: `https://sandbox.stg.eudistack.net/issuer`
 
 El patrón canónico (consistente con `multi-tenant.md`) es `{tenant}-stg.eudistack.net`. La primera forma debería eliminarse.
 
@@ -128,7 +128,7 @@ El link `[Digital Credential Query Language (DCQL)]` apunta a un fragmento de la
 
 ### 19.SOLVED `api-reference/verifier.md` — Link Swagger apunta a URL live del sandbox
 
-El link al Swagger UI apunta directamente a `https://sandbox-stg.eudistack.net/verifier/v3/api-docs`. Si el entorno STG no está levantado, el link está roto. Sería preferible una URL estable o añadir una nota de que requiere el entorno activo.
+El link al Swagger UI apunta directamente a `https://sandbox.stg.eudistack.net/verifier/v3/api-docs`. Si el entorno STG no está levantado, el link está roto. Sería preferible una URL estable o añadir una nota de que requiere el entorno activo.
 
 ### 20.SOLVED `oidc-idp.md` — Valor `acr: "0"` en el id_token de ejemplo
 

@@ -29,9 +29,9 @@ El acceso al sandbox se gestiona manualmente por el equipo de EUDIStack.
 
 | Servicio | URL |
 |---|---|
-| Issuer API | `https://sandbox-stg.eudistack.net/issuer` |
-| Verifier API | `https://sandbox-stg.eudistack.net/verifier` |
-| Wallet PWA | `https://sandbox-stg.eudistack.net/wallet` |
+| Issuer API | `https://sandbox.stg.eudistack.net/issuer` |
+| Verifier API | `https://sandbox.stg.eudistack.net/verifier` |
+| Wallet PWA | `https://sandbox.stg.eudistack.net/wallet` |
 
 ## Próximos pasos
 

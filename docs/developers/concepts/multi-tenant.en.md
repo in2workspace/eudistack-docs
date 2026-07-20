@@ -14,7 +14,7 @@ EUDIStack frontend and backend components automatically identify the tenant from
 flowchart LR
     A[Wallet / Client Application]
 
-    A --> B[sandbox-stg.eudistack.net]
+    A --> B[sandbox.stg.eudistack.net]
     A --> C[dome-stg.eudistack.net]
 
     B --> D[Shared Issuer Backend]
@@ -33,7 +33,7 @@ The tenant is automatically resolved from the request **subdomain**. Your integr
 ??? example "Tenant resolution examples"
     | URL | Resolved tenant |
     |---|---|
-    | `sandbox-stg.eudistack.net` | `sandbox` |
+    | `sandbox.stg.eudistack.net` | `sandbox` |
     | `dome-stg.eudistack.net` | `dome` |
     | `kpmg-stg.eudistack.net` | `kpmg` |
 

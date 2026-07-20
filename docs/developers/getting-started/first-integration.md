@@ -24,9 +24,9 @@ sequenceDiagram
 ??? info "Prerrequisitos antes de empezar"
 
     - Acceso al sandbox. Solicítalo en [Sandbox](sandbox.md). URLs del entorno:
-        - Issuer: `https://sandbox-stg.eudistack.net/issuer`
-        - Wallet: `https://sandbox-stg.eudistack.net/wallet`
-        - Verifier: `https://sandbox-stg.eudistack.net/verifier`
+        - Issuer: `https://sandbox.stg.eudistack.net/issuer`
+        - Wallet: `https://sandbox.stg.eudistack.net/wallet`
+        - Verifier: `https://sandbox.stg.eudistack.net/verifier`
     - Un Bearer Token válido (proporcionado por el equipo de EUDIStack al dar acceso al sandbox).
     - Postman o curl.
 
@@ -35,7 +35,7 @@ sequenceDiagram
 === "Request"
 
     ```http
-    POST https://sandbox-stg.eudistack.net/issuer/api/v1/issuances
+    POST https://sandbox.stg.eudistack.net/issuer/api/v1/issuances
     Content-Type: application/json
     Authorization: Bearer {{token}}
     ```
@@ -75,14 +75,14 @@ sequenceDiagram
 
     ```json
     {
-      "credential_offer_uri": "openid-credential-offer://?credential_offer_uri=https://sandbox-stg.eudistack.net/issuer/oid4vci/v1/credential-offer/XXXX"
+      "credential_offer_uri": "openid-credential-offer://?credential_offer_uri=https://sandbox.stg.eudistack.net/issuer/oid4vci/v1/credential-offer/XXXX"
     }
     ```
 
 ## Paso 2: Abrir la Credential Offer (Wallet)
 
 1. Copia el `credential_offer_uri` de la respuesta anterior.
-2. Accede al wallet `https://sandbox-stg.eudistack.net/wallet`.
+2. Accede al wallet `https://sandbox.stg.eudistack.net/wallet`.
 3. Inicia sessión o crea un wallet.
 4. Selecciona "Scan credential".
 5. Pega el `credential_offer_uri` copiado anteriormente.
@@ -107,7 +107,7 @@ Una vez validado:
 === "Request"
 
     ```http
-    POST https://sandbox-stg.eudistack.net/verifier/api/v1/authorization-request
+    POST https://sandbox.stg.eudistack.net/verifier/api/v1/authorization-request
     ```
 
 === "Response"

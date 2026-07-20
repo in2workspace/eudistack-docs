@@ -11,7 +11,7 @@ Server-side API of the European Business Wallet.
 ??? info "OpenAPI Specification"
     The API is documented using OpenAPI 3.0, automatically generated:
 
-    - [Wallet API (OpenAPI specification)](https://sandbox-stg.eudistack.net/wallet/v3/api-docs) *(requires the sandbox environment to be active)*.
+    - [Wallet API (OpenAPI specification)](https://sandbox.stg.eudistack.net/wallet/v3/api-docs) *(requires the sandbox environment to be active)*.
 
 ---
 

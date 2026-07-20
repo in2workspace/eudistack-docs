@@ -5,7 +5,7 @@ API for initiating credential verification and validating presentations.
 ??? info "OpenAPI Specification"
     The Verifier OpenAPI specification is automatically generated from the backend service (`springdoc-openapi`).
 
-    - [Verifier API (OpenAPI JSON)](https://sandbox-stg.eudistack.net/verifier/v3/api-docs) *(requires the sandbox environment to be active)*.
+    - [Verifier API (OpenAPI JSON)](https://sandbox.stg.eudistack.net/verifier/v3/api-docs) *(requires the sandbox environment to be active)*.
 
 ---
 
