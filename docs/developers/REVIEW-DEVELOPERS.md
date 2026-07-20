@@ -144,3 +144,21 @@ El claim `acr` en el ejemplo tiene valor `"0"`, que en el contexto OIDC/eIDAS su
 | Media — inconsistencias que confunden al integrador | #6, #7, #8, #9, #15, #16 |
 | Media — contenido incompleto visible | #10, #13, #14 |
 | Baja — mejoras de claridad/completitud | #11, #12, #17, #18, #19, #20 |
+
+---
+
+## Actualizaciones posteriores a la revisión
+
+> Esta sección registra cambios hechos **después** de la revisión del 2026-05-18.
+> Los hallazgos #1–#20 de arriba se conservan tal como se observaron en esa
+> fecha (incluidas sus URLs originales), por ser un registro histórico.
+
+### 2026-07 — Migración del dominio del sandbox
+
+El entorno sandbox migró de `sandbox-stg.eudistack.net` a
+`sandbox.stg.eudistack.net`. Se actualizaron todas las URLs en las páginas
+publicadas bajo `docs/developers/` y en sus traducciones `.en.md`.
+
+Las referencias a `sandbox-stg.eudistack.net` que aparecen en los hallazgos
+**#6** y **#19** se mantienen a propósito con el dominio antiguo, porque
+describen el estado observado durante la revisión del 2026-05-18.

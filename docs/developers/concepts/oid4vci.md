@@ -73,7 +73,7 @@ El estándar OID4VCI define dos flujos para la emisión de credenciales. La impl
 
         ```json
         {
-          "credential_issuer": "https://sandbox-stg.eudistack.net/issuer",
+          "credential_issuer": "https://sandbox.stg.eudistack.net/issuer",
           "credential_configuration_ids": [
             "learcredential.employee.sd.1"
           ],
@@ -95,7 +95,7 @@ El estándar OID4VCI define dos flujos para la emisión de credenciales. La impl
 
         ```json
         {
-          "credential_issuer": "https://sandbox-stg.eudistack.net/issuer",
+          "credential_issuer": "https://sandbox.stg.eudistack.net/issuer",
           "credential_configuration_ids": [
             "learcredential.employee.sd.1"
           ],

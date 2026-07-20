@@ -24,9 +24,9 @@ sequenceDiagram
 ??? info "Prerequisites before starting"
 
     - Access to the sandbox. Request it at [Sandbox](sandbox.md). Environment URLs:
-        - Issuer: `https://sandbox-stg.eudistack.net/issuer`
-        - Wallet: `https://sandbox-stg.eudistack.net/wallet`
-        - Verifier: `https://sandbox-stg.eudistack.net/verifier`
+        - Issuer: `https://sandbox.stg.eudistack.net/issuer`
+        - Wallet: `https://sandbox.stg.eudistack.net/wallet`
+        - Verifier: `https://sandbox.stg.eudistack.net/verifier`
     - A valid Bearer Token (provided by the EUDIStack team when granting sandbox access).
     - Postman or curl.
 
@@ -35,7 +35,7 @@ sequenceDiagram
 === "Request"
 
     ```http
-    POST https://sandbox-stg.eudistack.net/issuer/api/v1/issuances
+    POST https://sandbox.stg.eudistack.net/issuer/api/v1/issuances
     Content-Type: application/json
     Authorization: Bearer {{token}}
     ```
@@ -75,14 +75,14 @@ sequenceDiagram
 
     ```json
     {
-      "credential_offer_uri": "openid-credential-offer://?credential_offer_uri=https://sandbox-stg.eudistack.net/issuer/oid4vci/v1/credential-offer/XXXX"
+      "credential_offer_uri": "openid-credential-offer://?credential_offer_uri=https://sandbox.stg.eudistack.net/issuer/oid4vci/v1/credential-offer/XXXX"
     }
     ```
 
 ## Step 2: Open the Credential Offer (Wallet)
 
 1. Copy the `credential_offer_uri` from the previous response.
-2. Go to the wallet: `https://sandbox-stg.eudistack.net/wallet`.
+2. Go to the wallet: `https://sandbox.stg.eudistack.net/wallet`.
 3. Log in or create a wallet.
 4. Select "Scan credential".
 5. Paste the previously copied `credential_offer_uri`.
@@ -107,7 +107,7 @@ Once validated:
 === "Request"
 
     ```http
-    POST https://sandbox-stg.eudistack.net/verifier/api/v1/authorization-request
+    POST https://sandbox.stg.eudistack.net/verifier/api/v1/authorization-request
     ```
 
 === "Response"
@@ -153,7 +153,7 @@ There are two ways to obtain the result.
     Query the verification status using the integrator-facing endpoint, with the `session_id` obtained in Step 4:
 
     ```http
-    GET https://sandbox-stg.eudistack.net/verifier/api/v1/authorization-request/{id}
+    GET https://sandbox.stg.eudistack.net/verifier/api/v1/authorization-request/{id}
     Authorization: Bearer {{token}}
     ```
 

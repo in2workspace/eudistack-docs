@@ -28,7 +28,7 @@ The Issuer authenticates backend systems using OAuth 2.0 Client Credentials. Cre
 
         ```http
         POST /issuer/oid4vci/v1/token
-        Host: sandbox-stg.eudistack.net
+        Host: sandbox.stg.eudistack.net
         Content-Type: application/x-www-form-urlencoded
 
         grant_type=client_credentials&
@@ -59,7 +59,7 @@ With the obtained `access_token`, create the offer. The `client_request_id` fiel
 
         ```http
         POST /issuer/api/v1/issuances
-        Host: sandbox-stg.eudistack.net
+        Host: sandbox.stg.eudistack.net
         Authorization: Bearer eyJhbGci...
         Content-Type: application/json
         ```
@@ -98,7 +98,7 @@ With the obtained `access_token`, create the offer. The `client_request_id` fiel
         ```json
         {
           "issuance_id": "a3f1b2c4-7d8e-9f0a-b1c2-d3e4f5a6b7c8",
-          "credential_offer_uri": "openid-credential-offer://?credential_offer_uri=https://sandbox-stg.eudistack.net/issuer/oid4vci/v1/credential-offer/XXXX",
+          "credential_offer_uri": "openid-credential-offer://?credential_offer_uri=https://sandbox.stg.eudistack.net/issuer/oid4vci/v1/credential-offer/XXXX",
           "status": "pending",
           "expires_at": "2026-05-18T18:00:00Z"
         }

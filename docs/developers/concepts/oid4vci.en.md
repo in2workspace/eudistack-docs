@@ -73,7 +73,7 @@ The OID4VCI standard defines two flows for credential issuance. The EUDIStack im
 
         ```json
         {
-          "credential_issuer": "https://sandbox-stg.eudistack.net/issuer",
+          "credential_issuer": "https://sandbox.stg.eudistack.net/issuer",
           "credential_configuration_ids": [
             "learcredential.employee.sd.1"
           ],
@@ -95,7 +95,7 @@ The OID4VCI standard defines two flows for credential issuance. The EUDIStack im
 
         ```json
         {
-          "credential_issuer": "https://sandbox-stg.eudistack.net/issuer",
+          "credential_issuer": "https://sandbox.stg.eudistack.net/issuer",
           "credential_configuration_ids": [
             "learcredential.employee.sd.1"
           ],

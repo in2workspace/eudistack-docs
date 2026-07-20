@@ -6,7 +6,7 @@ API for issuing verifiable credentials and managing their lifecycle using OpenID
 
 The Issuer OpenAPI specification is automatically generated from the backend service (`springdoc-openapi`).
 
-- [Issuer API (OpenAPI specification)](https://sandbox-stg.eudistack.net/issuer/v3/api-docs) *(requires the sandbox environment to be active)*.
+- [Issuer API (OpenAPI specification)](https://sandbox.stg.eudistack.net/issuer/v3/api-docs) *(requires the sandbox environment to be active)*.
 
 ## Main Endpoints
 

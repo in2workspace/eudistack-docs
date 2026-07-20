@@ -163,6 +163,10 @@ Here you will find a summary of the most relevant new features and improvements 
 
 ??? "Knowledge Base"
     === "2026-07"
+        **EUDIStack Sandbox URL update fix**
+
+        - The Sandbox domain has been updated to sandbox.stg.eudistack.net (the old domain, sandbox-stg.eudistack.net, was still in use).
+
         **English guides now available**
 
         - The user guides (EUDIW Wallet and Business Wallet) and the administrator guides (Issuer Portal) are now fully available in English, in addition to Spanish.

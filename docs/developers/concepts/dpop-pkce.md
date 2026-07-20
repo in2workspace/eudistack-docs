@@ -56,7 +56,7 @@ EUDIStack exige PKCE en todos los flujos Authorization Code, incluidos clientes 
 
     ```http
     POST /issuer/oid4vci/v1/token HTTP/1.1
-    Host: sandbox-stg.eudistack.net
+    Host: sandbox.stg.eudistack.net
     Content-Type: application/x-www-form-urlencoded
 
     grant_type=authorization_code&
@@ -102,7 +102,7 @@ DPoP es obligatorio en EUDIStack para evitar replay attacks y garantizar que los
 
     ```http
     POST /oid4vci/v1/token HTTP/1.1
-    Host: sandbox-stg.eudistack.net
+    Host: sandbox.stg.eudistack.net
     Authorization: Basic d2FsbGV0LWRldjpzZWNyZXQ=
     DPoP: eyJhbGciOiJFUzI1NiIsImp3ayI6eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2In19...
     Content-Type: application/x-www-form-urlencoded
@@ -118,7 +118,7 @@ DPoP es obligatorio en EUDIStack para evitar replay attacks y garantizar que los
     {
       "jti": "52ede3f4-8c13-4c6f-9b41-1f5d2c11d8c7",
       "htm": "POST",
-      "htu": "https://sandbox-stg.eudistack.net/issuer/oid4vci/v1/token",
+      "htu": "https://sandbox.stg.eudistack.net/issuer/oid4vci/v1/token",
       "iat": 1710000000
     }
     ```

@@ -6,7 +6,7 @@ API para emitir credenciales verificables y gestionar su ciclo de vida mediante 
 
 La especificación OpenAPI del Issuer se genera automáticamente desde el servicio backend (`springdoc-openapi`).
 
-- [Issuer API (OpenAPI specification)](https://sandbox-stg.eudistack.net/issuer/v3/api-docs) *(requiere el entorno sandbox activo)*.
+- [Issuer API (OpenAPI specification)](https://sandbox.stg.eudistack.net/issuer/v3/api-docs) *(requiere el entorno sandbox activo)*.
 
 ## Endpoints principales
 
