@@ -33,7 +33,7 @@ Línea 163: `"Selecciona SCIM cmo modo de provisioning"` → debería ser `"como
 ### 6.SOLVED Patrón de URL del Issuer inconsistente
 
 - `oid4vci.md` y `dpop-pkce.md` (ejemplo DPoP) usan: `https://issuer.sandbox.eudistack.net`
-- Todo el resto de la documentación usa: `https://sandbox.stg.eudistack.net/issuer`
+- Todo el resto de la documentación usa: `https://sandbox-stg.eudistack.net/issuer`
 
 El patrón canónico (consistente con `multi-tenant.md`) es `{tenant}-stg.eudistack.net`. La primera forma debería eliminarse.
 
@@ -128,7 +128,7 @@ El link `[Digital Credential Query Language (DCQL)]` apunta a un fragmento de la
 
 ### 19.SOLVED `api-reference/verifier.md` — Link Swagger apunta a URL live del sandbox
 
-El link al Swagger UI apunta directamente a `https://sandbox.stg.eudistack.net/verifier/v3/api-docs`. Si el entorno STG no está levantado, el link está roto. Sería preferible una URL estable o añadir una nota de que requiere el entorno activo.
+El link al Swagger UI apunta directamente a `https://sandbox-stg.eudistack.net/verifier/v3/api-docs`. Si el entorno STG no está levantado, el link está roto. Sería preferible una URL estable o añadir una nota de que requiere el entorno activo.
 
 ### 20.SOLVED `oidc-idp.md` — Valor `acr: "0"` en el id_token de ejemplo
 
@@ -144,3 +144,21 @@ El claim `acr` en el ejemplo tiene valor `"0"`, que en el contexto OIDC/eIDAS su
 | Media — inconsistencias que confunden al integrador | #6, #7, #8, #9, #15, #16 |
 | Media — contenido incompleto visible | #10, #13, #14 |
 | Baja — mejoras de claridad/completitud | #11, #12, #17, #18, #19, #20 |
+
+---
+
+## Actualizaciones posteriores a la revisión
+
+> Esta sección registra cambios hechos **después** de la revisión del 2026-05-18.
+> Los hallazgos #1–#20 de arriba se conservan tal como se observaron en esa
+> fecha (incluidas sus URLs originales), por ser un registro histórico.
+
+### 2026-07 — Migración del dominio del sandbox
+
+El entorno sandbox migró de `sandbox-stg.eudistack.net` a
+`sandbox.stg.eudistack.net`. Se actualizaron todas las URLs en las páginas
+publicadas bajo `docs/developers/` y en sus traducciones `.en.md`.
+
+Las referencias a `sandbox-stg.eudistack.net` que aparecen en los hallazgos
+**#6** y **#19** se mantienen a propósito con el dominio antiguo, porque
+describen el estado observado durante la revisión del 2026-05-18.
