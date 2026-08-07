@@ -114,6 +114,7 @@ plugins:
             Conceptos: Concepts
             Guías: Guides
             OIDC IdP (login con credencial): OIDC IdP (credential login)
+            Autenticación M2M: M2M Authentication
             Referencia API: API Reference
             Referencia: Reference
             Glosario: Glossary
@@ -245,6 +246,7 @@ nav:
       - Guías:
           - developers/guides/index.md
           - OIDC IdP (login con credencial): developers/guides/oidc-idp.md
+          - Autenticación M2M: developers/guides/m2m-authentication.md
           - SCIM Provisioning: developers/guides/scim-provisioning.md
           - API Direct Issuance: developers/guides/api-direct-issuance.md
       - Referencia API:

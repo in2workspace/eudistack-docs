@@ -8,6 +8,10 @@ Recipes for concrete use cases. Each guide assumes you are already familiar with
 
     Use EUDIStack as an OIDC Identity Provider for your application: your users will log in by presenting a verifiable credential.
 
+-   :material-robot-outline: [**M2M Authentication**](m2m-authentication.en.md)
+
+    Authenticate a backend service against the Verifier by presenting a machine credential, with no `client_secret`.
+
 -   :material-account-multiple-plus: [**SCIM Provisioning**](scim-provisioning.en.md)
 
     Synchronise users and attributes from your corporate IdP (Okta, Entra ID, etc.) into EUDIStack via SCIM 2.0.
